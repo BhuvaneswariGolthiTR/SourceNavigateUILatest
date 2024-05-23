@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><n-load verifycollection="crsw_en_caselaw">
+	<n-document control="ADD" guid="I10b717eaa2a363f0e0440003ba0d6c6d">
+		<n-metadata>
+			<metadata.block>
+				<md.identifiers>
+					<md.cites>
+						<md.primarycite>2004WL1902704</md.primarycite>
+						<md.parallelcite>2004 CarswellOnt 3554</md.parallelcite>
+						<md.parallelcite>[2004] I.L.R. I-4332</md.parallelcite>
+						<md.parallelcite>[2004] O.J. No. 3608</md.parallelcite>
+						<md.parallelcite>133 A.C.W.S. (3d) 536</md.parallelcite>
+						<md.parallelcite>13 C.C.L.I. (4th) 163</md.parallelcite>
+						<md.parallelcite>14 M.V.R. (5th) 31</md.parallelcite>
+						<md.parallelcite>190 O.A.C. 141</md.parallelcite>
+						<md.parallelcite>242 D.L.R. (4th) 577</md.parallelcite>
+						<md.parallelcite>73 O.R. (3d) 266</md.parallelcite>
+					</md.cites>
+					<md.cmsids>
+						<md.cmsid cmsid.type="C">6562298</md.cmsid>
+					</md.cmsids>
+					<md.westlawids>
+						<md.ccserial>404579986</md.ccserial>
+						<md.case.slug>WL CANCLII</md.case.slug>
+						<md.case.slug.code>749</md.case.slug.code>
+					</md.westlawids>
+					<md.uuid>I10b717eaa2a363f0e0440003ba0d6c6d</md.uuid>
+					<md.legacy.id>2112110045</md.legacy.id>
+					<md.provider.id>5</md.provider.id>
+				</md.identifiers>
+				<md.infotype>C</md.infotype>
+				<md.descriptions>
+					<md.shorttitle>Simison (Litigation Guardian of) v. Catlyn</md.shorttitle>
+					<md.longtitle>ALEXANDER SIMISON, a minor by his Litigation Guardian, Darlene Wright, DARLENE WRIGHT, GREG SIMISON, SARAH SIMISON, BETTY WRIGHT, JACK SIMISON and BARBARA SIMISON (Plaintiffs / Respondents) and TROY CATLYN, JENNIFER JONES, AGUILAR HUGO PAREDES and WESTERN ASSURANCE COMPANY (Defendants / Appellant)</md.longtitle>
+					<md.doc.family.uuid>I106a62eb01bb11d99cceaa6a64c16789</md.doc.family.uuid>
+					<md.lang>EN</md.lang>
+				</md.descriptions>
+				<md.dates>
+					<md.starteffective>20040903</md.starteffective>
+					<md.revisiondate>20200914</md.revisiondate>
+					<md.pubyear>20040903</md.pubyear>
+					<md.extractdate>20200915063548</md.extractdate>
+					<md.createddatetime>20000628</md.createddatetime>
+				</md.dates>
+				<md.history>
+					<md.keycite>
+						<md.flag.color.code>Y</md.flag.color.code>
+						<md.doctype.code>C</md.doctype.code>
+						<md.citing.cases>10</md.citing.cases>
+						<md.display.citing.cases>(Judicially considered 10 times)</md.display.citing.cases>
+					</md.keycite>
+					<md.events>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="2017404460" id.type="uuid">I10b717eaa2d463f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1421</md.history.code>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>753</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="1986268700" id.type="uuid">I10b717cf96bf63f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1531</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>749</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="2003044988" id.type="uuid">I10b717d479b463f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1531</md.history.code>
+							<md.depth.of.trtmt>2</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>749</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="1988288299" id.type="uuid">I10b717cb761e63f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1256</md.history.code>
+							<md.depth.of.trtmt>2</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>749</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="1999482205" id.type="uuid">I10b717d28acd63f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1256</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>749</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="2000667867" id.type="uuid">I10b717d2db5d63f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1256</md.history.code>
+							<md.depth.of.trtmt>2</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>753</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="2002056184" id.type="uuid">I10b717d40c4c63f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1256</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>730</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="1993384604" id.type="uuid">I10b717ce80b263f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1627</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>730</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="1980156942" id.type="uuid">I10b717cf5db063f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1627</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>749</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc ccserial.id="2001344139" id.type="uuid">I10b717cb429763f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1627</md.history.code>
+							<md.depth.of.trtmt>1</md.depth.of.trtmt>
+							<md.cited.info>
+								<md.doctype.code>C</md.doctype.code>
+								<md.case.slug.num>753</md.case.slug.num>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc dmsserial.id="0280776163" id.type="uuid">I10b717d6c30263f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1627</md.history.code>
+							<md.cited.info>
+								<md.doctype.code>S</md.doctype.code>
+								<md.citator.heading.text>Cases Citing R. 22</md.citator.heading.text>
+								<md.citator.sort.value>00000000000000000000</md.citator.sort.value>
+							</md.cited.info>
+						</md.event>
+						<md.event>
+							<md.identifier.of.citing.doc ccserial.id="2000000112" id.type="uuid">I10b717eaa2a363f0e0440003ba0d6c6d</md.identifier.of.citing.doc>
+							<md.identifier.of.cited.doc dmsserial.id="0280665363" id.type="uuid">I10b717d8c09763f0e0440003ba0d6c6d</md.identifier.of.cited.doc>
+							<md.history.code>1627</md.history.code>
+							<md.cited.info>
+								<md.doctype.code>S</md.doctype.code>
+								<md.citator.heading.text>Cases Citing Generally</md.citator.heading.text>
+								<md.citator.sort.value>00000000000000000001</md.citator.sort.value>
+							</md.cited.info>
+						</md.event>
+					</md.events>
+					<md.digests>
+						<md.digest>
+							<md.digest.classifnum>INS.XII.3.a.ii</md.digest.classifnum>
+							<!-- KC:846191 -->
+							<md.digest.classification>Insurance — Automobile insurance — Extent of risk — Terms of art — "Occupant"</md.digest.classification>
+						</md.digest>
+						<md.digest>
+							<md.digest.classifnum>INS.XII.7.e</md.digest.classifnum>
+							<!-- KC:846191 -->
+							<md.digest.classification>Insurance — Automobile insurance — Uninsured automobile coverage — Stolen vehicle</md.digest.classification>
+						</md.digest>
+						<md.digest>
+							<md.digest.classifnum>STS.II.3.a</md.digest.classifnum>
+							<!-- KC:846191 -->
+							<md.digest.classification>Statutes — Interpretation — Rules of interpretation — Object and purpose</md.digest.classification>
+						</md.digest>
+					</md.digests>
+				</md.history>
+				<md.subjects>
+					<md.subject>
+						<md.keyphrases>
+							<md.keyphrase>Law</md.keyphrase>
+							<md.keyphrase>Insurance</md.keyphrase>
+							<md.keyphrase>Public</md.keyphrase>
+						</md.keyphrases>
+					</md.subject>
+				</md.subjects>
+				<md.jurisdictions>
+					<md.jurisdiction>
+						<md.jurisnum>5490</md.jurisnum>
+						<md.juriscountry>Canada</md.juriscountry>
+						<md.jurisstate>Ontario</md.jurisstate>
+						<md.jurisabbrev>CA</md.jurisabbrev>
+					</md.jurisdiction>
+				</md.jurisdictions>
+				<md.publications>
+					<md.publication>
+						<md.pubid>999</md.pubid>
+						<md.pubvolume>2004</md.pubvolume>
+						<md.pubpage>1902704</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>5476</md.pubid>
+						<md.pubvolume>2004</md.pubvolume>
+						<md.pubpage>3554</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>5810</md.pubid>
+						<md.pubvolume>[2004]</md.pubvolume>
+						<md.pubpage>I-4332</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>6729</md.pubid>
+						<md.pubvolume>[2004]</md.pubvolume>
+						<md.pubpage>3608</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>6564</md.pubid>
+						<md.pubvolume>133</md.pubvolume>
+						<md.pubpage>536</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>7085</md.pubid>
+						<md.pubvolume>13</md.pubvolume>
+						<md.pubpage>163</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>7144</md.pubid>
+						<md.pubvolume>14</md.pubvolume>
+						<md.pubpage>31</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>5460</md.pubid>
+						<md.pubvolume>190</md.pubvolume>
+						<md.pubpage>141</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>3591</md.pubid>
+						<md.pubvolume>242</md.pubvolume>
+						<md.pubpage>577</md.pubpage>
+					</md.publication>
+					<md.publication>
+						<md.pubid>5506</md.pubid>
+						<md.pubvolume>73</md.pubvolume>
+						<md.pubpage>266</md.pubpage>
+					</md.publication>
+				</md.publications>
+			</metadata.block>
+			<minor.link.metadata.block>
+				<mlmd.authorities>Y</mlmd.authorities>
+			</minor.link.metadata.block>
+			<n-view>ONTE</n-view>
+			<prism-clipdate>20040907233814</prism-clipdate>
+		</n-metadata>
+		<n-docbody>
+			<decision ID="CaseLaw_846191" language="EN">
+				<img source="wlnc" src="846191LS.pdf">
+					<image.block>
+						<document.image.link tlrclass="document.image.link" ttype="inline" tuuid="Ie3ffb96041a45a0fe0440021280d7cce"/>
+						<image.keywords>Original</image.keywords>
+						<image.text>846191LS</image.text>
+					</image.block>
+				</img>
+				<content.metadata.block>
+					<cmd.case.views source="wlnc">
+						<cmd.case.view>
+							<cmd.view.title tuuid="I10b717eaa2a363f0e0440003ba0d6c6d" type="LS">Source</cmd.view.title>
+							<cmd.view.text>PDF</cmd.view.text>
+						</cmd.case.view>
+						<cmd.case.view>
+							<cmd.view.title tuuid="If0a4eca5650b00a2e0440021280d79ee" type="DLR">Dominion Law Reports</cmd.view.title>
+							<cmd.view.text>PDF</cmd.view.text>
+						</cmd.case.view>
+						<cmd.case.view>
+							<cmd.view.title tuuid="If0348467271b3b90e0440021280d7cce" type="ACWS">All-Canada Weekly Summaries</cmd.view.title>
+						</cmd.case.view>
+					</cmd.case.views>
+					<cmd.courtdoc.indicator>F;M;;P;</cmd.courtdoc.indicator>
+					<cmd.lmdoc.indicator>01; 368450825</cmd.lmdoc.indicator>
+					<cmd.content.block source="wlnc">
+						<cmd.header1>2004 CarswellOnt 3554</cmd.header1>
+						<cmd.prelim1>2004 CarswellOnt 3554</cmd.prelim1>
+						<cmd.negative.trtmt>
+							<cmd.neg.text>
+								<bold>Most Negative Treatment:</bold> Distinguished</cmd.neg.text>
+							<cmd.neg.case>
+								<bold>Most Recent Distinguished:</bold>
+								<link normalizedcite="CaseLaw_935401" pubid="5476" tlr-class="hypertext-ref" tuuid="I10b717ef3e6e63f0e0440003ba0d6c6d" wlserial="2008117507">Bellavia v. Allianz Insurance Co. of Canada</link> | 2006 CarswellOnt 1802, [2006] O.F.S.C.D. No. 34 | (F.S.C.O. Arb., Feb 21, 2006)</cmd.neg.case>
+						</cmd.negative.trtmt>
+					</cmd.content.block>
+				</content.metadata.block>
+				<content.block>
+					<title.block ID="TIa000292383">
+						<text.line>Simison (Litigation Guardian of) v. Catlyn</text.line>
+						<text.line>ALEXANDER SIMISON, a minor by his Litigation Guardian, Darlene Wright, DARLENE WRIGHT, GREG SIMISON, SARAH SIMISON, BETTY WRIGHT, JACK SIMISON and BARBARA SIMISON (Plaintiffs / Respondents) and TROY CATLYN, JENNIFER JONES, AGUILAR HUGO PAREDES and WESTERN ASSURANCE COMPANY (Defendants / Appellant)</text.line>
+					</title.block>
+					<citation.block ID="CIa000292384">
+						<cite.line>
+							<primary.cite>
+								<cite ID="CIa000292375">2004 CarswellOnt 3554</cite>
+							</primary.cite>
+							<parallel.cite>
+								<cite ID="CIa000292376">13 C.C.L.I. (4th) 163</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292377">242 D.L.R. (4th) 577</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292378">[2004] I.L.R. I-4332</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292379">190 O.A.C. 141</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292380">73 O.R. (3d) 266</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292381">14 M.V.R. (5th) 31</cite>
+							</parallel.cite>
+							<parallel.cite>
+								<cite ID="CIa000292382">133 A.C.W.S. (3d) 536</cite>
+							</parallel.cite>
+						</cite.line>
+					</citation.block>
+					<court.block ID="COa000292385">
+						<court.line>
+							<court>Ontario Court of Appeal</court>
+						</court.line>
+						<court.line.hidden>Ontario Court of Appeal, 2004</court.line.hidden>
+					</court.block>
+					<panel.block ID="PAa000292386">
+						<panel.line>
+							<judge>Goudge, Simmons, Juriansz JJ.A.</judge>
+						</panel.line>
+					</panel.block>
+					<date.block ID="DAa000292387">
+						<date.line>
+							<date>Heard:  April 27, 2004</date>
+							<date>Judgment:  September 3, 2004</date>
+							<date significance="year">Year: 2004</date>
+						</date.line>
+					</date.block>
+					<docket.block ID="DOa000292388">
+						<docket.line>Docket:  CA C40579</docket.line>
+					</docket.block>
+					<action.block ID="ABa000292389">
+						<action.line>Proceedings:  reversing <ital>Simison (Litigation Guardian of) v. Catlyn</ital>
+							<link normalizedcite="CaseLaw_846241" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717eaa2d463f0e0440003ba0d6c6d" wlserial="2017404460"> (2003), 2003 CarswellOnt 6228</link> (Ont. S.C.J.)</action.line>
+					</action.block>
+					<attorney.block ID="ATa000292390">
+						<attorney.line>
+							<attorney>Counsel:  William Zener for Appellant, Western Assurance Company</attorney>
+							<attorney>Robert E. Seabrook for Appellant, Troy Catlyn</attorney>
+							<attorney>William J. McCorriston, Gerry Gill for Respondents</attorney>
+						</attorney.line>
+					</attorney.block>
+					<headnote.block ID="HNBa000292424">
+						<headnote ID="HNa000292430" source="editorial">
+							<catchphrase.para>
+								<catchphrase.group>
+									<catchphrase>Subject: Insurance</catchphrase>
+									<catchphrase>; Public</catchphrase>
+								</catchphrase.group>
+							</catchphrase.para>
+						</headnote>
+						<digest.wrapper source="wlnc">
+							<digests ID="DHNa000292372">
+								<digest.keysubject ID="INS">Insurance</digest.keysubject>
+								<digest.classifs>
+									<digest.classif1>
+										<digest.classifnum search_string="INS.XII" taxonomy="Canadian_Abridgment">XII</digest.classifnum>
+										<digest.classification>Automobile insurance</digest.classification>
+									</digest.classif1>
+									<digest.classif2>
+										<digest.classifnum search_string="INS.XII.3" taxonomy="Canadian_Abridgment">XII.3</digest.classifnum>
+										<digest.classification>Extent of risk</digest.classification>
+									</digest.classif2>
+									<digest.classif3>
+										<digest.classifnum search_string="INS.XII.3.a" taxonomy="Canadian_Abridgment">XII.3.a</digest.classifnum>
+										<digest.classification>Terms of art</digest.classification>
+									</digest.classif3>
+									<digest.classif4>
+										<digest.classifnum search_string="INS.XII.3.a.ii" taxonomy="Canadian_Abridgment">XII.3.a.ii</digest.classifnum>
+										<digest.classification>"Occupant"</digest.classification>
+									</digest.classif4>
+								</digest.classifs>
+							</digests>
+							<digests ID="DHNa000292373">
+								<digest.keysubject ID="INS">Insurance</digest.keysubject>
+								<digest.classifs>
+									<digest.classif1>
+										<digest.classifnum search_string="INS.XII" taxonomy="Canadian_Abridgment">XII</digest.classifnum>
+										<digest.classification>Automobile insurance</digest.classification>
+									</digest.classif1>
+									<digest.classif2>
+										<digest.classifnum search_string="INS.XII.7" taxonomy="Canadian_Abridgment">XII.7</digest.classifnum>
+										<digest.classification>Uninsured automobile coverage</digest.classification>
+									</digest.classif2>
+									<digest.classif3>
+										<digest.classifnum search_string="INS.XII.7.e" taxonomy="Canadian_Abridgment">XII.7.e</digest.classifnum>
+										<digest.classification>Stolen vehicle</digest.classification>
+									</digest.classif3>
+								</digest.classifs>
+							</digests>
+							<digests ID="DHNa000292374">
+								<digest.keysubject ID="STS">Statutes</digest.keysubject>
+								<digest.classifs>
+									<digest.classif1>
+										<digest.classifnum search_string="STS.II" taxonomy="Canadian_Abridgment">II</digest.classifnum>
+										<digest.classification>Interpretation</digest.classification>
+									</digest.classif1>
+									<digest.classif2>
+										<digest.classifnum search_string="STS.II.3" taxonomy="Canadian_Abridgment">II.3</digest.classifnum>
+										<digest.classification>Rules of interpretation</digest.classification>
+									</digest.classif2>
+									<digest.classif3>
+										<digest.classifnum search_string="STS.II.3.a" taxonomy="Canadian_Abridgment">II.3.a</digest.classifnum>
+										<digest.classification>Object and purpose</digest.classification>
+									</digest.classif3>
+								</digest.classifs>
+							</digests>
+						</digest.wrapper>
+						<headnote.wrapper>
+							<headnote ID="HNa000123270" classifications="INS.XII.3.a.ii" source="editorial">
+								<catchphrase.para>
+									<classification.group>
+										<classification>Insurance</classification>
+										<classification> --- Extent of risk (exclusions)</classification>
+										<classification> — Automobile insurance</classification>
+										<classification> — Terms of art</classification>
+										<classification> — "Occupant"</classification>
+									</classification.group>
+								</catchphrase.para>
+								<headnote.body>
+									<para>
+										<paratext>   Test </paratext>
+										<paratext> — Following accident, S claimed damages against insurer under uninsured motorist provisions of his mother's automobile insurance policy</paratext>
+										<paratext> — On motion by way of special case to determine meaning of exclusion clause in second clause of paragraph 1.8.2 of Ontario Standard Automobile Policy ("OAP 1"), court determined that policy did not exclude coverage for occupant of stolen vehicle</paratext>
+										<paratext> — Insurer appealed</paratext>
+										<paratext> — Applying modern rule of statutory interpretation requiring determination of meaning of legislation in its total context, second clause of paragraph 1.8.2 of OAP 1 refers to occupant of automobile rather than to occupant of "the automobile"</paratext>
+										<paratext> — Consequently, S's claim was excluded.</paratext>
+										<paratext>
+											<cite.query ID="I617032e1c06e11eab16dcb7f13ee3d19" source="NOD" w-docfamily-uuid="I61eb5c52f4db11d99f28ffa0ae8c2000" w-pinpoint-page="AB0CE9B2B5372D67E0540010E03EEFE0" w-pub-number="0135313" w-ref-type="IG" w-seq-number="00251" w-serial-number="280665363" w-target-preference="DocLanguage:en">Insurance Act, R.S.O. 1990, c. I.8</cite.query>
+											<bos/>
+										</paratext>
+									</para>
+								</headnote.body>
+							</headnote>
+						</headnote.wrapper>
+					</headnote.block>
+					<reflists.wrapper>
+						<table.of.cases.block ID="TCa000292406">
+							<head>
+								<headtext>
+									<bold>Cases considered by <ital>Simmons J.A.</ital>:</bold>
+								</headtext>
+							</head>
+							<table.of.cases.body>
+								<case.reference>
+									<ital>Bell ExpressVu Ltd. Partnership v. Rex</ital>
+									<link normalizedcite="CaseLaw_733195" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d40c4c63f0e0440003ba0d6c6d" wlserial="2002056184"> (2002), 2002 SCC 42, 2002 CarswellBC 851, 2002 CarswellBC 852, 100 B.C.L.R. (3d) 1, [2002] 5 W.W.R. 1, 212 D.L.R. (4th) 1, 287 N.R. 248, 18 C.P.R. (4th) 289, 166 B.C.A.C. 1, 271 W.A.C. 1, 93 C.R.R. (2d) 189, [2002] 2 S.C.R. 559</link> (S.C.C.) — considered</case.reference>
+								<case.reference>
+									<ital>Benjamin v. Islam</ital>
+									<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867"> (2000), 2000 CarswellOnt 4278, 51 O.R. (3d) 412, 8 M.V.R. (4th) 103, 25 C.C.L.I. (3d) 99</link> (Ont. S.C.J.) — considered</case.reference>
+								<case.reference>
+									<ital>Benjamin v. Islam</ital>
+									<link normalizedcite="CaseLaw_695598" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb429763f0e0440003ba0d6c6d" wlserial="2001344139"> (2001), 2001 CarswellOnt 586</link> (Ont. S.C.J.) — referred to</case.reference>
+								<case.reference>
+									<ital>Coombe v. Constitution Insurance Co.</ital>
+									<link normalizedcite="CaseLaw_32151" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cf5db063f0e0440003ba0d6c6d" wlserial="1980156942"> (1980), 29 O.R. (2d) 729, 115 D.L.R. (3d) 499, [1980] I.L.R. 1-1278, 1980 CarswellOnt 1320</link> (Ont. C.A.) — referred to</case.reference>
+								<case.reference>
+									<ital>Fraczek v. Pascual</ital>
+									<link normalizedcite="CaseLaw_778012" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d479b463f0e0440003ba0d6c6d" wlserial="2003044988"> (2003), 2003 CarswellOnt 1453, 170 O.A.C. 363, 46 C.C.L.I. (3d) 170, 64 O.R. (3d) 437, 50 E.T.R. (2d) 56, 226 D.L.R. (4th) 309</link> (Ont. C.A.) — followed</case.reference>
+								<case.reference>
+									<ital>July v. Neal</ital>
+									<link normalizedcite="CaseLaw_69876" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cf96bf63f0e0440003ba0d6c6d" wlserial="1986268700"> (1986), 57 O.R. (2d) 129, 32 D.L.R. (4th) 463, 17 O.A.C. 390, 19 C.C.L.I. 230, 12 C.P.C. (2d) 303, [1986] I.L.R. 1-2126, 44 M.V.R. 1, 1986 CarswellOnt 446</link> (Ont. C.A.) — followed</case.reference>
+								<case.reference>
+									<ital>MacNeill v. Pope</ital>
+									<link normalizedcite="CaseLaw_638597" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d28acd63f0e0440003ba0d6c6d" wlserial="1999482205"> (1999), 1999 CarswellOnt 253, 43 R.F.L. (4th) 209, <ital>(</ital>sub nom.<ital> Pope v. Pope)</ital> 170 D.L.R. (4th) 89, <ital>(</ital>sub nom.<ital> Pope v. Pope)</ital> 117 O.A.C. 275, <ital>(</ital>sub nom.<ital> Pope v. Pope)</ital> 42 O.R. (3d) 514</link> (Ont. C.A.) — considered</case.reference>
+								<case.reference>
+									<ital>Reid Crowther &amp; Partners Ltd. v. Simcoe &amp; Erie General Insurance Co.</ital>
+									<link normalizedcite="CaseLaw_169617" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717ce80b263f0e0440003ba0d6c6d" wlserial="1993384604"> (1993), [1993] 2 W.W.R. 433, <ital>(</ital>sub nom.<ital> Simcoe &amp; Erie General Insurance Co. v. Reid Crowther &amp; Partners Ltd.)</ital> [1993] I.L.R. 1-2914, 13 C.C.L.I. (2d) 161, 83 Man. R. (2d) 81, 36 W.A.C. 81, 6 C.L.R. (2d) 161, [1993] 1 S.C.R. 252, 147 N.R. 44, 99 D.L.R. (4th) 741, 1993 CarswellMan 96, 1993 CarswellMan 343</link> (S.C.C.) — referred to</case.reference>
+								<case.reference>
+									<ital>Riddell v. Slattery Estate</ital>
+									<link normalizedcite="CaseLaw_170592" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb761e63f0e0440003ba0d6c6d" wlserial="1988288299"> (1988), <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> 6 M.V.R. (2d) 317, <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> 50 D.L.R. (4th) 533, <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> 31 C.C.L.I. 180, <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> 27 O.A.C. 216, <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> [1988] I.L.R. 1-2329, <ital>(</ital>sub nom.<ital> Coombs v. Flavell)</ital> 64 O.R. (2d) 737, 1988 CarswellOnt 26</link> (Ont. C.A.) — considered</case.reference>
+							</table.of.cases.body>
+						</table.of.cases.block>
+						<reference.block>
+							<reference.block.body>
+								<code.reference.block>
+									<head>
+										<headtext>
+											<bold>Statutes considered:</bold>
+										</headtext>
+									</head>
+									<code.reference>
+										<ital>Insurance Act</ital>, R.S.O. 1990, c. I.8
+										<cite ID="Ra000292394">Generally — referred to </cite>
+									</code.reference>
+								</code.reference.block>
+								<code.reference.block>
+									<head>
+										<headtext>
+											<bold>Rules considered:</bold>
+										</headtext>
+									</head>
+									<code.reference>
+										<ital>Rules of Civil Procedure</ital>, R.R.O. 1990, Reg. 194
+										<cite ID="Ra000292395">R. 22 — referred to </cite>
+									</code.reference>
+								</code.reference.block>
+								<wordphrase.block>
+									<head>
+										<headtext>
+											<bold>Words and phrases considered</bold>
+										</headtext>
+									</head>
+									<wordphrase.block.body>
+										<wordphrase.para>
+											<wordphrase.group>
+												<wordphrase ID="WPa000292396">
+													<bold>occupant</bold>
+												</wordphrase>
+											</wordphrase.group>
+										</wordphrase.para>
+										<wordphrase.para>. . . . .</wordphrase.para>
+										<wordphrase.para>[A]pplying the modern rule of statutory interpretation requiring the determination of the meaning of legislation in its total context, I conclude that the second clause of paragraph 1.8.2 of [Ontario Standard Automobile Policy (OAP 1)] refers to an occupant of an automobile rather than to an occupant of "the automobile" as defined in the policy. </wordphrase.para>
+										<wordphrase.para>. . . . .</wordphrase.para>
+									</wordphrase.block.body>
+								</wordphrase.block>
+							</reference.block.body>
+						</reference.block>
+					</reflists.wrapper>
+					<action.summary.block ID="ASBa000292407">
+						<action.line> APPEAL by insurer of judgment of motion judge reported at <ital>Simison (Litigation Guardian of) v. Catlyn</ital>
+							<link normalizedcite="CaseLaw_846241" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717eaa2d463f0e0440003ba0d6c6d" wlserial="2017404460"> (2003), 2003 CarswellOnt 6228</link> (Ont. S.C.J.), that person was covered by automobile policy.</action.line>
+					</action.summary.block>
+					<opinion.block ID="OBa000292408">
+						<opinion.block.body>
+							<opinion.undesignated ID="OPa000292409">
+								<opinion.body>
+									<para>
+										<paratext>
+											<bold>
+												<ital>Simmons J.A.</ital>:</bold>
+										</paratext>
+									</para>
+									<section ID="Sa000292397">
+										<head>
+											<headtext>
+												<bold>I. Overview</bold>
+											</headtext>
+										</head>
+										<section.body>
+											<para>
+												<label.designator>1     </label.designator>
+												<paratext>In 1999, fourteen-year-old Alexander Simison ("Simison") was injured in a motor vehicle accident while riding as a passenger in a stolen car. Following the accident, Simison claimed damages against Western Assurance Company ("Western") under the uninsured motorist provisions of his mother's automobile insurance policy. On a motion by way of a special case to determine the meaning of an exclusion clause in the policy, Hoy J. determined that paragraph 1.8.2 does not exclude coverage under the policy for an occupant of a stolen vehicle. For the reasons that follow, I would allow Western's appeal from the motion judge's decision.</paratext>
+											</para>
+										</section.body>
+									</section>
+									<section ID="Sa000292398">
+										<head>
+											<headtext>
+												<bold>II. Background</bold>
+											</headtext>
+										</head>
+										<section.body>
+											<para>
+												<label.designator>2     </label.designator>
+												<paratext>On April 23, 1999, Simison was a passenger in a stolen car that collided with another vehicle. In addition to suing the owners and drivers of the vehicles involved in the collision, Simison claimed damages for a severe closed head injury against Western under his mother's insurance policy. In accordance with the requirements of the <ital>Insurance Act</ital>, R.S.O. 1990 c. I. 8, his mother's policy was issued in a form approved by the Superintendent of Financial Services (the Ontario Standard Automobile Policy ("OAP 1")), and included mandatory uninsured motorist coverage.</paratext>
+											</para>
+											<para>
+												<label.designator>3     </label.designator>
+												<paratext>After the action was commenced, Simison and Western moved under Rule 22 of the <ital>Rules of Civil Procedure</ital>, R.R.O. 1990, Reg. 194, and requested an opinion concerning whether paragraph 1.8.2 of OAP 1 excludes Simison's claim for coverage. For the purposes of the motion, the parties agreed that the automobile in which Simison was riding at the time of the collision was stolen.</paratext>
+											</para>
+											<para>
+												<label.designator>4     </label.designator>
+												<paratext>Western submits that Simison's claim is excluded under the second clause of paragraph 1.82 of OAP 1, which is the italicized portion of paragraph 1.8.2 set out below:</paratext>
+											</para>
+											<list>
+												<para>
+													<paratext>
+														<bold>1.8.2 Excluded Drivers and Driving Without Permission</bold>
+													</paratext>
+												</para>
+												<para>
+													<paratext>Except for certain Accident Benefits coverage, there is no coverage (including coverage for occupants) under this policy if <bold>the automobile</bold> is used or operated by a person in possession of <bold>the automobile</bold> without the owner' s consent or is driven by a person named as an excluded driver of <bold>the automobile</bold>.</paratext>
+												</para>
+												<para>
+													<paratext>
+														<ital>Except for certain Accident Benefits coverage, there is no coverage under this policy for an occupant of</ital>
+														<bold>
+															<ital>an automobile</ital>
+														</bold>
+														<ital>used or operated by a person in possession of</ital>
+														<bold>
+															<ital>the automobile</ital>
+														</bold>
+														<ital>without the owner's consent</ital> [emphasis added].</paratext>
+												</para>
+											</list>
+											<para>
+												<label.designator>5     </label.designator>
+												<paratext>In order to understand the parties' positions, it is important to note that "the automobile" is a defined term under the policy and that it would not encompass the vehicle in which Simison was riding at the time of the collision. In particular, OAP 1 differentiates between "a described automobile" (the automobile specifically shown on the certificate of insurance), and "the automobile". By definition "the automobile" includes "a described automobile", and also a newly acquired automobile, a temporary substitute automobile, other automobiles driven by the insured or his spouse who lives with him, and trailers in certain circumstances. The stolen vehicle in which Simison was riding at the time of the collision does not fall within this definition.</paratext>
+											</para>
+											<para>
+												<label.designator>6     </label.designator>
+												<paratext>Western claims that, while the exclusion set out in the first clause of paragraph 1.8.2 relates specifically to "the automobile" as defined in the policy and excludes coverage for occupants of "the automobile" when used or operated without the owner's consent, the exclusion set out in the second clause of paragraph 1.8.2 is more general. In providing "there is no coverage <charfill numchar="3">.</charfill> for an occupant of <ital>an</ital> automobile used or operated <charfill numchar="3">.</charfill> without the owner's consent" [emphasis added], it excludes coverage for the occupants of any automobile driven without consent and is not limited in its effect to occupants of "the automobile" as defined in the policy.</paratext>
+											</para>
+											<para>
+												<label.designator>7     </label.designator>
+												<paratext>In addition, Western contends that the phrase "an occupant of an automobile" is the governing language in the second clause of paragraph 1.8.2, and that the subsequent use of the words "the automobile" is an obvious reference back to that phrase. According to Western, it would be unreasonable to interpret the second clause of paragraph 1.8.2 as relating to "the automobile", just because the words, "the automobile", appear in the phrase "an occupant of an automobile used or operated by a person in possession of the automobile without the owner's consent." Moreover, interpreting the second clause of paragraph 1.8.2 as referring to "the automobile" as defined in the policy would add nothing to the exclusion set out in the first clause of paragraph 1.8.2 and would render the second clause of paragraph 1.8.2 redundant. Western therefore submits that the second clause of paragraph 1.8.2 relates to occupants of "an automobile" rather than "the automobile" and excludes Simison's claim.</paratext>
+											</para>
+											<para>
+												<label.designator>8     </label.designator>
+												<paratext>Contrary to Western's position, the respondents submit that the second clause of paragraph 1.8.2 must be interpreted as excluding claims for occupants of "the automobile" as defined in OAP 1. They rely on the fact that the words "the automobile" appear within the second clause of paragraph 1.8.2, and the basic principle of interpretation that the same words must be given the same meaning throughout a document. They submit that the second clause of paragraph 1.8.2 is at least ambiguous, and that several principles of interpretation relating specifically to insurance contracts require that it be interpreted as they suggest.</paratext>
+											</para>
+											<para>
+												<label.designator>9     </label.designator>
+												<paratext>In particular, the respondents rely on the following principles of interpretation: i) the <ital>contra proferentem</ital> rule; ii) the principle that coverage provisions should be construed broadly and exclusion clauses narrowly; iii) the desirability, at least where the policy is ambiguous, of giving effect to the reasonable expectations of the parties<footnote.reference refid="D846191f1">[FN1]</footnote.reference>; iv) the rule that where legislation is designed for the benefit or protection of the insured, it should be construed in his or her favour;<footnote.reference refid="D846191f2">[FN2]</footnote.reference> and v) the rule that where there is "doubt in the legislation establishing and governing the cover, and there are two possible interpretations of any aspect of the cover, the one more favourable to the insured should govern"<footnote.reference refid="D846191f3">[FN3]</footnote.reference>.</paratext>
+											</para>
+											<para>
+												<label.designator>10     </label.designator>
+												<paratext>In addition, the respondents contend that the definition in OAP 1 of the term "the automobile" is exhaustive and intended to displace other meanings that might arise in ordinary usage. They also rely on section 1.3 of OAP 1, which provides, "[i]n this section we will explain words used <ital>throughout</ital> this policy" [emphasis added], as supporting their claim that it is at least reasonable to read clause two of paragraph 1.8.2 as referring to "the automobile" and therefore to find that Simison's claim for coverage is not excluded.</paratext>
+											</para>
+											<para>
+												<label.designator>11     </label.designator>
+												<paratext>Finally, the respondents point out that paragraph 1.8.2 of OAP 1 was previously interpreted in <ital>Benjamin v. Islam</ital>
+													<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867"> (2000), 51 O.R. (3d) 412</link> (Ont. S.C.J.) [leave to appeal to Divisional Court refused, January 19, 2001 [<link normalizedcite="CaseLaw_695598" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb429763f0e0440003ba0d6c6d" wlserial="2001344139">2001 CarswellOnt 586</link> (Ont. S.C.J.)]]. In that case, Haines J. found that the second clause of paragraph 1.8.2 of OAP 1 refers to "the automobile" as defined in the policy. In making that decision, Haines J. noted that in <ital>Riddell v. Slattery Estate</ital>
+													<link normalizedcite="CaseLaw_170592" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb761e63f0e0440003ba0d6c6d" wlserial="1988288299"> (1988), 64 O.R. (2d) 737</link> (Ont. C.A.), this court concluded that a predecessor provision to paragraph 1.8.2 barred recovery of damages by an occupant of an uninsured vehicle. However, after examining the differing wording of the exclusion contained in paragraph 1.8.2 of OAP 1, Haines J. observed that "the automobile" could mean any motor vehicle in which the plaintiff was an occupant, being operated without the owner's consent, or that it could refer only to a motor vehicle qualifying as "the automobile". He commented that the former interpretation is "[m]ore likely, the interpretation intended by the draftsperson", but held that the "latter interpretation is the one that is more favourable to the insured and is therefore the one to be applied."</paratext>
+											</para>
+											<para>
+												<label.designator>12     </label.designator>
+												<paratext>The respondents rely on <ital>
+													<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867">Benjamin</link>
+												</ital> not only for its persuasive value but also because the wording of OAP 1 was revised subsequent to that decision and the wording of paragraph 1.8.2 remained unchanged.</paratext>
+											</para>
+										</section.body>
+									</section>
+									<section ID="Sa000292399">
+										<head>
+											<headtext>
+												<bold>III. The Motion Judge's Reasons</bold>
+											</headtext>
+										</head>
+										<section.body>
+											<para>
+												<label.designator>13     </label.designator>
+												<paratext>The motion judge expressly adopted the reasoning in <ital>
+													<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867">Benjamin</link>
+												</ital> and held that paragraph 1.8.2 of OAP 1 does not exclude Simison's claim for coverage. In support of her conclusion, the motion judge rejected Western's submission that the respondents' interpretation of the second clause of paragraph 1.8.2 is implausible and that it renders the second clause of paragraph 1.8.2 superfluous, finding that the second clause of paragraph 1.8.2 "specifically addresses the occupant of a vehicle."</paratext>
+											</para>
+										</section.body>
+									</section>
+									<section ID="Sa000292400">
+										<head>
+											<headtext>
+												<bold>IV. Analysis</bold>
+											</headtext>
+										</head>
+										<section.body>
+											<para>
+												<label.designator>14     </label.designator>
+												<paratext>I begin my analysis bearing two principles in mind. First, insurance policies are statutory contracts. In <ital>
+													<link normalizedcite="CaseLaw_69876" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cf96bf63f0e0440003ba0d6c6d" wlserial="1986268700">July v. Neal</link>
+												</ital>, <ital>supra</ital>, at p.135, McKinnon A.C.J.O observed that "[i]nsurance policies are statutory contracts and the wording of the terms <charfill numchar="3">.</charfill> normally are not the words of the insurer but the words of the statute or of the regulation." Second, as affirmed by Cronk J.A., in <ital>Fraczek v. Pascual</ital>
+													<link normalizedcite="CaseLaw_778012" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d479b463f0e0440003ba0d6c6d" wlserial="2003044988"> (2003), 64 O.R. (3d) 437</link> (Ont. C.A.), when interpreting legislation, courts must take into account the meaning of the legislation, in its total context. In <ital>
+														<link normalizedcite="CaseLaw_778012" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d479b463f0e0440003ba0d6c6d" wlserial="2003044988">Fraczek</link>
+													</ital>, Cronk J.A. set out a complete summary of "[t]he contemporary approach to the interpretation of legislation in civil cases", citing R. Sullivan, <ital>Driedger on the Construction of Statutes</ital>, 3<super>rd</super> ed. (Toronto, Butterworths, 1994) at 131:</paratext>
+											</para>
+											<list>
+												<para>
+													<paratext>
+														<ital>There is only one rule in modern interpretation, namely, courts are obliged to determine the meaning of legislation in its total context, having regard to the purpose of the legislation, the consequences of proposed interpretations, the presumptions and special rules of interpretation, as well as admissible external aids. In other words, the courts must consider and take into account all relevant and admissible indicators of legislative meaning.</ital> After taking these into account, the court must then adopt the interpretation that is appropriate. An appropriate interpretation is one that can be justified in terms of (a) its plausibility, that is, its compliance with the legislative text; (b) its efficacy, that is its promotion of the legislative purpose; and (c) its acceptability, that is, the outcome is reasonable and just. [emphasis in original.]</paratext>
+												</para>
+											</list>
+											<para>
+												<label.designator>15     </label.designator>
+												<paratext>Bearing these principles in mind, I conclude, for six reasons, that the second clause of paragraph 1.8.2. of OAP 1 refers to an occupant of an automobile rather than to an occupant of "the automobile" as defined in the policy, and that it therefore excludes Simison's claim.</paratext>
+											</para>
+											<para>
+												<label.designator>16     </label.designator>
+												<paratext>First, I accept Western's submission that the second clause of paragraph 1.8.2 of OAP 1 would be redundant if it were interpreted as referring to "the automobile" as defined in the policy. I do not agree with the motion judge's conclusion that the reference to "an occupant" in the second clause of paragraph 1.8.2 somehow distinguishes the second clause of paragraph 1.8.2 from the first clause of paragraph 1.8.2. The first clause of paragraph 1.8.2 specifically states that "there is no coverage (including coverage for occupants)" in defined circumstances, whereas the second clause of paragraph 1.8.2 provides "there is no coverage <charfill numchar="3">.</charfill> for an occupant of an automobile". On their face, the first and second clauses of paragraph 1.8.2 both apply to occupants. Moreover, if the respondents' suggested interpretation of the second clause of paragraph 1.8.2 were adopted, I see no other basis for concluding that the second clause would add meaning to the first clause.</paratext>
+											</para>
+											<para>
+												<label.designator>17     </label.designator>
+												<paratext>Second, in my view, interpreting "the automobile" in the second clause of paragraph 1.8.2 of OAP 1 as referring back to the earlier phrase "an automobile" in the same clause, and therefore as meaning "any motor vehicle in which the plaintiff was an occupant that was being operated by someone without the owner's consent", is reasonable. That interpretation comports with the ordinary meaning of the words in the second clause. Importantly, it also recognizes that the words "an automobile" should be interpreted as meaning something different than the words "the automobile".</paratext>
+											</para>
+											<para>
+												<label.designator>18     </label.designator>
+												<paratext>Third, like Haines J., I consider it likely that the drafters intended the second clause of paragraph 1.8.2 of OAP 1 to apply to "any motor vehicle in which the plaintiff was an occupant that was being operated by someone without the owner's consent": see <ital>
+													<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867">Benjamin</link>
+												</ital>, <ital>supra</ital>, at para. 15. I reach this conclusion in two ways. The first way is simply by reading paragraph 1.8.2 as a whole. Viewed as a package it seems obvious that the drafters intended the second clause in the paragraph to mean something different than the first clause. Moreover, as I have indicated already, that is the plain meaning of the second clause.</paratext>
+											</para>
+											<para>
+												<label.designator>19     </label.designator>
+												<paratext>The second way I reach this conclusion is by examining the evolution in wording of the exclusion provision that is now set out in paragraph 1.8.2 of OAP 1. As part of his analysis in <ital>
+													<link normalizedcite="CaseLaw_688010" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d2db5d63f0e0440003ba0d6c6d" wlserial="2000667867">Benjamin</link>
+												</ital>, Haines J. set out the wording that was the subject of consideration by this court in <ital>
+													<link normalizedcite="CaseLaw_170592" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb761e63f0e0440003ba0d6c6d" wlserial="1988288299">Riddell</link>
+												</ital>, as well as the language of three subsequent amendments:</paratext>
+											</para>
+											<list>
+												<list>
+													<para>
+														<paratext>i.) the wording of the applicable provision under consideration in <ital>
+															<link normalizedcite="CaseLaw_170592" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cb761e63f0e0440003ba0d6c6d" wlserial="1988288299">Riddell</link>
+														</ital>:</paratext>
+													</para>
+													<list>
+														<para>
+															<paratext>3. No person shall be entitled to indemnity or payment under this policy who is an occupant of any automobile which is being used without the consent of the owner thereof.</paratext>
+														</para>
+													</list>
+													<para>
+														<paratext>ii.) the Ontario Motorists Protection Plan wording (June 1, 1992 — March 31, 1994):</paratext>
+													</para>
+													<list>
+														<para>
+															<paratext>An occupant of an automobile which is being operated without the consent of the owner or by an excluded driver shall not be entitled to indemnity or payment under this Policy except as provided in Part B (Accident Benefits).</paratext>
+														</para>
+													</list>
+													<para>
+														<paratext>iii.) the Bill 164 — Ontario Automobile Policy wording (March 31, 1994-October 31, 1996):</paratext>
+													</para>
+													<list>
+														<para>
+															<paratext>Except for certain Accident Benefits coverage, there is no coverage (including coverage for occupants) under this policy if the automobile: </paratext>
+														</para>
+														<list>
+															<para>
+																<paratext>• is being operated by a person without the owner's consent, or</paratext>
+															</para>
+															<para>
+																<paratext>• is being driven by someone specifically excluded from this policy.</paratext>
+															</para>
+														</list>
+													</list>
+													<para>
+														<paratext>iv.) the Bill 59 — OAP 1 wording (November 1, 1996 - present):</paratext>
+													</para>
+													<list>
+														<para>
+															<paratext>Except for certain Accident Benefits coverage, there is no coverage (including coverage for occupants) under this policy if the automobile is used or operated by a person in possession of the automobile without the owner's consent or is driven by a person named as an excluded driver of the automobile.</paratext>
+														</para>
+														<para>
+															<paratext>Except for certain Accident Benefits coverage, there is no coverage under this policy for an occupant of an automobile used or operated by a person in possession of the automobile without the owner's consent.</paratext>
+														</para>
+													</list>
+												</list>
+											</list>
+											<para>
+												<label.designator>20     </label.designator>
+												<paratext>Bearing in mind that "the automobile" was a defined term in each of the quoted standard form policies, it appears that the exclusion provisions that preceded paragraph 1.8.2 of OAP 1 had the following effects: i) until March 31, 1994, the occupants of <ital>any</ital> automobile that was driven without the owner's consent were excluded from coverage under the policy; and ii) between March 31, 1994 and October 31, 1996, only occupants of "the automobile" as defined in the policy were excluded from coverage under the policy.</paratext>
+											</para>
+											<para>
+												<label.designator>21     </label.designator>
+												<paratext>As I read paragraph 1.8.2 of OAP 1, it incorporates, with minor amendments, the wording of the exclusion that was in effect from March 31, 1994, until October 31, 1996 (the day before OAP 1 came into effect). However, the second clause of paragraph 1.8.2 of OAP 1 constitutes a self-contained addition. In my view, particularly when considered in light of the history of the exclusion provision, the addition of the second clause of paragraph 1.8.2 of OAP 1 signals an intention to expand the scope of the exclusion that was in effect from March 31, 1994, until October 31, 1996, which was narrower in scope than its predecessor provision.</paratext>
+											</para>
+											<para>
+												<label.designator>22     </label.designator>
+												<paratext>Fourth, in light of the foregoing conclusions and the presumption that the legislature avoids superfluous language, I reach the further conclusion that the respondents' suggested interpretation of the second clause of paragraph 1.8.2 of OAP 1 is not plausible. Once again, I begin with the proposition that insurance policies are statutory contracts. In <ital>MacNeill v. Pope</ital>
+													<link normalizedcite="CaseLaw_638597" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d28acd63f0e0440003ba0d6c6d" wlserial="1999482205"> (1999), 42 O.R. (3d) 514</link> (Ont. C.A.), Osborne J.A. noted at p. 521 that "[i]t is a fundamental principle of statutory interpretation that where possible meaning should be attributed to all of the words that the legislature has chose to use. He also quoted the following extract from R. Sullivan, <ital>Driedger on the Construction of Statutes</ital>, <ital>supra</ital>:</paratext>
+											</para>
+											<list>
+												<para>
+													<paratext>It is presumed that the legislature avoids superfluous or meaningless words, that it does not pointlessly repeat itself or speak in vain. <ital>Every word in a statute is presumed to make sense and to have a specific role to play in advancing the legislative purpose</ital>. [Emphasis in original.]</paratext>
+												</para>
+											</list>
+											<para>
+												<label.designator>23     </label.designator>
+												<paratext>In my view, when combined with the principle set out in <ital>
+													<link normalizedcite="CaseLaw_638597" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d28acd63f0e0440003ba0d6c6d" wlserial="1999482205">Pope</link>
+												</ital>, my conclusions that the respondents' suggested interpretation of the second clause of paragraph 1.8.2 would make that clause redundant and that the appellant's suggested interpretation of the second clause of paragraph 1.8.2 is reasonable, make the respondents' suggested interpretation of the second clause of paragraph 1.8.2 implausible. The respondents' suggested interpretation does not comply with the legislative text. Moreover, it does not appear to reflect the intention of the drafters.</paratext>
+											</para>
+											<para>
+												<label.designator>24     </label.designator>
+												<paratext>Fifth, I conclude that the respondents' suggested interpretation of the second clause of paragraph 1.8.2 does not raise a "real ambiguity" requiring the application of the special rules of interpretation on which the respondents rely. In <ital>Bell ExpressVu Ltd. Partnership v. Rex</ital>
+													<link normalizedcite="CaseLaw_733195" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d40c4c63f0e0440003ba0d6c6d" wlserial="2002056184">, [2002] 2 S.C.R. 559</link> (S.C.C.), Iacobucci J. examined the circumstances in which "real ambiguity", requiring the use of special rules of interpretation will exist. He said the following at para. 29:</paratext>
+											</para>
+											<list>
+												<para>
+													<paratext>What, then, in law is an ambiguity? To answer, an ambiguity must be "real" (Marcotte, supra, at p. 115). The words of the provision must be "reasonably capable of more than one meaning" (<ital>Westminster Bank Ltd. v. Zang</ital>
+														<link normalizedcite="CaseLaw_559957" pubid="" tlr-class="hypertext-ref" tuuid="I10b717d311aa63f0e0440003ba0d6c6d" wlserial="1965014817">, [1966] A.C. 182</link> (H.L.), at p. 222, per Lord Reid). By necessity, however, one must consider the "entire context" of a provision before one can determine if it is reasonably capable of multiple interpretations. In this regard, Major J.'s statement in <ital>CanadianOxy Chemicals Ltd. v. Canada (Attorney General)</ital>
+														<link normalizedcite="CaseLaw_645237" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717ce77fe63f0e0440003ba0d6c6d" wlserial="1999485919">, [1999] 1 S.C.R. 743</link>, at para. 14, is apposite: "It is only when genuine ambiguity arises between two or more plausible readings, <ital>each equally in accordance with the intentions of the statute</ital>, that the courts need to resort to external interpretive aids" to which I would add, "including other principles of interpretation". [Emphasis in original.]</paratext>
+												</para>
+											</list>
+											<para>
+												<label.designator>25     </label.designator>
+												<paratext>Because I have concluded that the respondents' suggested interpretation of paragraph 1.8.2 is implausible, it does not raise an ambiguity requiring the application of special rules of interpretation.</paratext>
+											</para>
+											<para>
+												<label.designator>26     </label.designator>
+												<paratext>Sixth, I conclude that interpreting the second clause of paragraph 1.8.2 as referring to an occupant of any automobile driven without consent can be justified as "reasonable and just": see <ital>
+													<link normalizedcite="CaseLaw_778012" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717d479b463f0e0440003ba0d6c6d" wlserial="2003044988">Fraczek</link>
+												</ital>, <ital>supra</ital>, at p. 442. If the second clause of paragraph 1.8.2 were interpreted as referring to "the automobile" as defined in the policy, it would mean that persons who steal cars belonging to innocent third parties, or who knowingly ride in stolen cars belonging to innocent third parties, would be entitled to insurance coverage for their injuries in the event of an accident. There is obvious merit in excluding criminal actors and their associates from insurance coverage.</paratext>
+											</para>
+											<para>
+												<label.designator>27     </label.designator>
+												<paratext>In summary, applying the modern rule of statutory interpretation requiring the determination of the meaning of legislation in its total context, I conclude that the second clause of paragraph 1.8.2. of OAP 1 refers to an occupant of an automobile rather than to an occupant of "the automobile" as defined in the policy, and that it therefore excludes Simison's claim.</paratext>
+											</para>
+										</section.body>
+									</section>
+									<section ID="Sa000292401">
+										<head>
+											<headtext>
+												<bold>V. Disposition</bold>
+											</headtext>
+										</head>
+										<section.body>
+											<para>
+												<label.designator>28     </label.designator>
+												<paratext>Based on the foregoing reasons, I would allow the appeal and set aside the judgment dated August 6, 2003; I would answer the question posed in the special case, namely, "[d]oes paragraph 1.8.2 of OAP 1 exclude [Simison] from coverage under the policy for this claim", in the affirmative; in accordance with the terms of the special case, I would dismiss the action against Western without costs; and I would award costs of the appeal to the appellant on a partial indemnity scale fixed at $7,500 plus disbursements and applicable G.S.T.</paratext>
+											</para>
+										</section.body>
+									</section>
+								</opinion.body>
+							</opinion.undesignated>
+							<opinion.undesignated ID="OUa000292402">
+								<opinion.body>
+									<para>
+										<paratext>
+											<bold>
+												<ital>Goudge J.A.</ital>:</bold>
+										</paratext>
+									</para>
+									<para>
+										<paratext>I agree.</paratext>
+									</para>
+								</opinion.body>
+							</opinion.undesignated>
+							<opinion.undesignated ID="OUa000292403">
+								<opinion.body>
+									<para>
+										<paratext>
+											<bold>
+												<ital>Juriansz J.A.</ital>:</bold>
+										</paratext>
+									</para>
+									<para>
+										<paratext>I agree.</paratext>
+									</para>
+								</opinion.body>
+							</opinion.undesignated>
+						</opinion.block.body>
+					</opinion.block>
+					<order.block>
+						<order.block.body>
+							<para>
+								<paratext style="r">
+									<ital>Appeal allowed.</ital>
+								</paratext>
+							</para>
+						</order.block.body>
+					</order.block>
+					<footnote.block ID="FNBa000292410">
+						<footnote ID="D846191f1">
+							<label.designator>FN1</label.designator>
+							<footnote.body>
+								<para>
+									<paratext> The first three principles are set out in <ital>Reid Crowther &amp; Partners Ltd. v. Simcoe &amp; Erie General Insurance Co.</ital>
+										<link normalizedcite="CaseLaw_169617" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717ce80b263f0e0440003ba0d6c6d" wlserial="1993384604">, [1993] 1 S.C.R. 252</link> (S.C.C.).</paratext>
+								</para>
+							</footnote.body>
+						</footnote>
+						<footnote ID="D846191f2">
+							<label.designator>FN2</label.designator>
+							<footnote.body>
+								<para>
+									<paratext>
+										<ital>Coombe v. Constitution Insurance Co.</ital>
+										<link normalizedcite="CaseLaw_32151" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cf5db063f0e0440003ba0d6c6d" wlserial="1980156942"> (1980), 29 O.R. (2d) 729</link> (Ont. C.A.).</paratext>
+								</para>
+							</footnote.body>
+						</footnote>
+						<footnote ID="D846191f3">
+							<label.designator>FN3</label.designator>
+							<footnote.body>
+								<para>
+									<paratext>
+										<ital>July v. Neal</ital>
+										<link normalizedcite="CaseLaw_69876" pubid="6407" tlr-class="hypertext-ref" tuuid="I10b717cf96bf63f0e0440003ba0d6c6d" wlserial="1986268700"> (1986), 57 O.R. (2d) 129</link> (Ont. C.A.).</paratext>
+								</para>
+							</footnote.body>
+						</footnote>
+					</footnote.block>
+				</content.block>
+			</decision>
+		</n-docbody>
+	</n-document>
+</n-load>

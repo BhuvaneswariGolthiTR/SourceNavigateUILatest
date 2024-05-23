@@ -1,0 +1,99 @@
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by West Publishing Corp. dba (West Publishing Corp. dba) -->
+<content.set>
+  <grade>
+    <ht1>Handbook for Financial Services Businesses on Countering Financial Crime and Terrorist Financing</ht1>
+  </grade>
+  <grade>
+    <hg1>PART 1-REGULATORY REQUIREMENTS AND GUIDANCE NOTES</hg1>
+  </grade>
+  <grade>
+    <hg3>Chapter 1-INTRODUCTION</hg3>
+    <mp21>1. The laundering of criminal proceeds and the financing of terrorism through the financial systems of the world is vital to the success of criminal and terrorist operations. To this end, criminals and terrorists seek to exploit the facilities of the world&apos;s financial services businesses in order to benefit from such proceeds or financing. Increased integration of the world&apos;s financial systems and the removal of barriers to the free movement of capital have enhanced the ease with which criminal proceeds can be laundered or terrorist funds transferred and have added to the complexity of audit trails. The future of the Bailiwick of Guernsey (Guernsey) as a well-respected international financial centre depends on its ability to prevent the abuse of its financial services sector. Descriptions of money laundering and terrorist financing are provided in Appendix H to this Handbook.</mp21>
+  </grade>
+  <section>
+    <cp>1.1</cp>
+    <snl>1.1 Background and Scope</snl>
+    <mp21>2. The Guernsey authorities are committed to ensuring that money launderers, terrorists, those financing terrorism and other criminals, cannot launder the proceeds of crime through Guernsey, or otherwise use Guernsey&apos;s finance sector. The Guernsey Financial Services Commission (the Commission) endorses the International Standards on Combating Money Laundering and the Financing of Terrorism &amp; Proliferation issued by the Financial Action Task Force (FATF). The Handbook for Financial Services Businesses on Countering Financial Crime and Terrorist Financing (the Handbook) is a statement of the standards expected by the Commission of all financial services businesses in Guernsey to ensure Guernsey’s compliance with the FATF’s standards.</mp21>
+    <mp21>3. Under section 1(1) of the Criminal Justice (Proceeds of Crime) (Bailiwick of Guernsey) Law, 1999 all offences that are indictable under the law of the Bailiwick are considered to be predicate offences and therefore funds obtained by committing a predicate offence are considered to be the proceeds of crime. Under Bailiwick law all offences are indictable except for some minor offences, which mainly concern public order and road traffic. Therefore, the range of predicate offences is extremely wide and includes but is not limited to the following:</mp21>
+    <mp21>* participation in an organised criminal group and racketeering;</mp21>
+    <mp21>* terrorism, including terrorist financing;</mp21>
+    <mp21>* trafficking in human beings and migrant smuggling;</mp21>
+    <mp21>* sexual exploitation, including sexual exploitation of children;</mp21>
+    <mp21>* illicit trafficking in narcotic drugs and psychotropic substances;</mp21>
+    <mp21>* illicit arms trafficking;</mp21>
+    <mp21>* illicit trafficking in stolen and other goods;</mp21>
+    <mp21>* corruption and bribery;</mp21>
+    <mp21>* fraud and tax evasion;</mp21>
+    <mp21>* counterfeiting and piracy of products;</mp21>
+    <mp21>* environmental crime;</mp21>
+    <mp21>* murder, grievous bodily injury;</mp21>
+    <mp21>* kidnapping, illegal restraint and hostage taking;</mp21>
+    <mp21>* robbery or theft;</mp21>
+    <mp21>* smuggling;</mp21>
+    <mp21>* extortion;</mp21>
+    <mp21>* forgery;</mp21>
+    <mp21>* piracy; and</mp21>
+    <mp21>* insider trading and market manipulation</mp21>
+    <mp21>4. Guernsey’s anti-money laundering and countering the financing of terrorism (AML/CFT) legislation (and by extension, the Handbook) applies to all financial services businesses conducting financial services business in Guernsey. This includes Guernsey-based branches and offices of companies incorporated outside Guernsey conducting financial services business in Guernsey.</mp21>
+  </section>
+  <section>
+    <cp>1.2</cp>
+    <snl>1.2 Purpose of the Handbook</snl>
+    <mp21>5. The Handbook has been issued by the Commission and, together with Statements issued by the Commission, contains the rules and guidance referred to in Regulation 3(2) of the Criminal Justice (Proceeds of Crime) (Financial Services Businesses) (Bailiwick of Guernsey) Regulations, 200&amp; as amended (the Regulations), section 15(8) of the Terrorism and Crime (Bailiwick of Guernsey) Law, 2002 as amended, section 15 of the Disclosure (Bailiwick of Guernsey)
+Law, 2007 and section 15 of the Transfer of Funds (Guernsey) Ordinance, 2007; the Transfer of Funds (Alderney) Ordinance, 2007 and the Transfer of Funds (Sark) Ordinance, 2007.</mp21>
+    <mp21>6. The Handbook is issued to assist financial services businesses to comply with the requirements of the relevant legislation concerning money laundering, terrorist financing and related offences to prevent the Bailiwick’s financial system from being used in the laundering of money or the financing of terrorism. The Criminal Justice (Proceeds of Crime) (Bailiwick of Guernsey) Law, 1999 as amended and the Terrorism and Crime (Bailiwick of Guernsey) Law, 2002 as amended states that the Guernsey courts shall take account of rules made and guidance given by the Commission in determining whether or not a person has complied with the Regulations.</mp21>
+    <mp21>7. The Guernsey AML/CFT framework includes the following legislation, which is referred to in the Handbook as the relevant enactments:</mp21>
+    <mp21>* The Criminal Justice (Proceeds of Crime) (Bailiwick of Guernsey) Law, 1999 as amended;</mp21>
+    <mp21>* The Drug Trafficking (Bailiwick of Guernsey) Law, 2000 as amended;</mp21>
+    <mp21>* The Terrorism and Crime (Bailiwick of Guernsey) Law, 2002 as amended;</mp21>
+    <mp21>* The Transfer of Funds (Guernsey) Ordinance, 2007;</mp21>
+    <mp21>* The Transfer of Funds (Alderney) Ordinance, 2007;</mp21>
+    <mp21>* The Transfer of Funds (Sark) Ordinance, 2007;</mp21>
+    <mp21>* The Disclosure (Bailiwick of Guernsey) Law, 2007 as amended;</mp21>
+    <mp21>* The Disclosure (Bailiwick of Guernsey) Regulations, 2007 as amended;</mp21>
+    <mp21>* The Terrorism and Crime (Bailiwick of Guernsey) Regulations, 2007 as amended;</mp21>
+    <mp21>* The Registration of Non-Regulated Financial Services Businesses (Bailiwick of Guernsey) Law, 2008 as amended;</mp21>
+    <mp21>* The Terrorist Asset-Freezing (Bailiwick of Guernsey) Law, 2011</mp21>
+    <mp21>* The Al-Qaida and Taliban (Freezing of Funds) (Guernsey) Ordinance, 2011and such enactments relating to money laundering or terrorist financing as may be enacted from time to time in the Bailiwick.</mp21>
+    <mp21>8. The Regulations include requirements relating to:</mp21>
+    <mp21>* risk assessment and mitigation;</mp21>
+    <mp21>* undertaking customer due diligence (CDD);</mp21>
+    <mp21>* monitoring customer activity and ongoing CDD;</mp21>
+    <mp21>* reporting suspected money laundering and terrorist financing activity;</mp21>
+    <mp21>* staff screening and training;</mp21>
+    <mp21>* record keeping; and</mp21>
+    <mp21>* ensuring compliance, corporate responsibility and related requirements.</mp21>
+    <mp21>9. For any financial services business, whether regulated by the Commission or registered with the Commission, the primary consequences of any significant failure to meet the standards required by the Regulations, the Handbook and the relevant enactments will be legal ones.</mp21>
+    <mp21>10. As regards a financial services business regulated by the Commission, the Commission is entitled to take such failure into consideration in the exercise of its judgment as to whether the financial services business and its directors and managers have satisfied the minimum criteria for licensing. In particular, in determining whether a firm is carrying on its business with integrity and skill and whether a person is fit and proper, the Commission must have regard to compliance with the Regulations, related rules in the Handbook and the relevant enactments.</mp21>
+    <mp21>11. As regards a financial services business which is not regulated by, but is registered with, the Commission, the Commission is entitled to consider compliance with the Regulations, the Handbook and the relevant enactments when exercising its judgement in considering the continuing registration of a financial services business.</mp21>
+  </section>
+  <section>
+    <cp>1.3</cp>
+    <snl>1.3 Contents of the Handbook</snl>
+    <mp21>12. The Handbook is divided into three parts. The text in Part 1 applies to all Guernsey financial services businesses. Part 2 provides material for a number of specific industry sectors, which supplements the generic text contained in Part 1. Part 3 contains appendices and a glossary of terms.</mp21>
+    <mp21>13. The full text of the Regulations is set out in Appendix F. That text is definitive. Any paraphrasing of that text within Part 1 or 2 of the Handbook represents the Commission’s own explanation of the Regulations and is for the purposes of information and assistance only. That paraphrasing does not detract from the legal effect of the Regulations or from their enforceability by the courts. In case of doubt you are advised to consult a Guernsey Advocate.</mp21>
+    <mp21>14. Part 1 of the Handbook takes a two-level approach:</mp21>
+    <mp21>* Level one (Commission Rules) sets out how the Commission requires financial services businesses to meet the Regulations. Compliance with the Commission Rules must be taken into account by the courts when considering
+compliance with the Regulations (which are legally enforceable and a contravention of which can result in prosecution). In addition, the Commission can take enforcement action under the regulatory laws for any contravention of the Commission Rules in respect of those financial services businesses licensed or authorised under those laws. The Commission can also take enforcement action under the Registration of Non-Regulated Financial Services Businesses (Bailiwick of Guernsey) Law, 2008 as amended in respect of those financial services businesses registered with the Commission under that law. In addition, the Commission can take enforcement action under the regulatory laws for any contravention of the Commission Rules in respect of those financial services businesses licensed or authorised under those laws and under the Financial Services Commission Law.</mp21>
+    <mp21>* Level two (Guidance) presents ways of complying with the Regulations and the Commission Rules. A financial services business may adopt other appropriate and effective measures to those set out in Guidance, including
+policies, procedures and controls established by the group Head Office of the financial services business, so long as it can demonstrate that such measures also achieve compliance with the Regulations and the Commission Rules.</mp21>
+    <mp21>15. When obligations in the Regulations are explained or paraphrased in the Handbook, and where the Commission’s Rules are set out in the Handbook, the term must is used, indicating that these provisions are mandatory and subject to the possibility of prosecution (in the case of a contravention of the Regulations) as well as regulatory sanction and any other applicable sanctions.</mp21>
+    <mp21>16. Information on the Regulations and, where appropriate, the text of the most relevant Regulations are shown in a box on a white background at the front of each chapter.</mp21>
+    <mp21>17. The text of the Commission Rules is presented in shaded boxes throughout each chapter of the Handbook for ease of reference.</mp21>
+    <mp21>18. In other cases, i.e. Guidance, the Handbook uses the terms should or may to indicate ways in which the requirements of the Regulations and the Commission Rules may be satisfied, but allowing for alternative means of meeting the requirements. References to “must”, “should” and “may” in the text must therefore be construed accordingly.</mp21>
+    <mp21>19. The Commission will from time to time update the Handbook to reflect new legislation, developments in the finance sector, changes to international standards and good practice and the Regulations.</mp21>
+    <mp21>20. The Handbook is not intended to provide an exhaustive list of appropriate and effective policies, procedures and controls to counter money laundering and the financing of terrorism. The structure of the Handbook is such that it permits a financial services business to adopt a risk-based approach appropriate to its particular circumstances. The financial services business should give consideration to additional measures that may be necessary to prevent its exploitation and that of its services/products and delivery channels by persons seeking to carry out money laundering or terrorist financing.</mp21>
+  </section>
+  <section>
+    <cp>Section 1.4</cp>
+    <snl>1.4 Risk-Based Approach</snl>
+    <mp21>21. A risk-based approach is a systematic approach to risk management and involves:</mp21>
+    <mp21>* risk identification and assessment – taking account of the customer and the business relationship or occasional transaction and of the product/service/delivery channel to identify the money laundering and terrorist financing risk to the financial services business;</mp21>
+    <mp21>* risk mitigation – applying appropriate and effective policies, procedures and controls to manage and mitigate the risks identified;</mp21>
+    <mp21>* risk monitoring – monitoring the effective operation of a financial services business’ policies, procedures and controls; and</mp21>
+    <mp21>* policies, procedures and controls – having documented policies, procedures and controls to ensure accountability to the board and senior management.</mp21>
+    <mp21>22. As part of the risk-based approach, financial services businesses are actively encouraged by the Commission to develop modern and secure techniques of money management as a means of encouraging the replacement of cash transfers. In addition, the Commission discourages the inappropriate use of cash collections and supports the maintenance of registers by financial services businesses which record the value and reasons for cash collections.</mp21>
+    <mp21>23. It is important to realise that various sectors in the financial services industry – whether in terms of products/services or delivery channel or typical customers, can differ materially. An approach to preventing money laundering and terrorist financing that is appropriate in one sector may be inappropriate in another.</mp21>
+    <mp21>24. A financial services business should be able to take such an approach to the risk of being used for the purposes of money laundering and terrorist financing and to ensure that its policies, procedures and controls are appropriately designed and implemented and are effectively operated to reduce the risk of the financial services business being used in connection with money laundering or terrorist financing.</mp21>
+  </section>
+</content.set>

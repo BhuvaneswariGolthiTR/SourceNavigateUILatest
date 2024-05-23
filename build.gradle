@@ -1,0 +1,1710 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitJupiterVersion = "5.9.1"
+    junitPlatformVersion = "1.9.1"
+    springVersion = "5.3.24"
+    seleniumVersion = "4.8.1"
+    apachePdfboxVersion = "2.0.27"
+    apachePoiVersion = "5.2.3"
+    jschVersion = "0.1.55"
+    commonsNetVersion = "3.8.0"
+    commonsIoVersion = "2.11.0"
+    commonsLangVersion = "3.12.0"
+    aspectjVersion = "1.9.9.1"
+    assertjVersion = "3.23.1"
+    slf4jVersion = "2.0.5"
+    log4jVersion = "2.19.0"
+    xmlUnitVersion = "2.9.0"
+    javaxVersion = "1.3.2"
+    sikulixapiVersion = "2.0.5"
+    jsonVersion = "1.1.1"
+}
+
+dependencies {
+    //log4j constraint check
+    constraints {
+        implementation("org.apache.logging.log4j:log4j-core") {
+            version {
+                strictly("[2.17.1, 3[")
+                prefer("${log4jVersion}")
+                reject("[1.0, 2.16[")
+            }
+            because("CVE-2021-44228: Log4j vulnerable to RCE")
+        }
+    }
+    //javax
+    implementation "javax.annotation:javax.annotation-api:${javaxVersion}"
+    //junit
+    implementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    implementation("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    implementation("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
+    implementation("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    implementation("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    //spring
+    testImplementation("org.springframework:spring-test:${springVersion}")
+    implementation("org.springframework:spring-aop:${springVersion}")
+    implementation("org.springframework:spring-context:${springVersion}")
+    //selenium
+    implementation("org.seleniumhq.selenium:selenium-java:${seleniumVersion}")
+    //apache MS files support
+    implementation("org.apache.pdfbox:pdfbox:${apachePdfboxVersion}")
+    implementation("org.apache.poi:poi:${apachePoiVersion}")
+    implementation("org.apache.poi:poi-ooxml:${apachePoiVersion}")
+    //jsch SSH
+    implementation("com.jcraft:jsch:${jschVersion}")
+    //apache commons
+    implementation("commons-net:commons-net:${commonsNetVersion}")
+    implementation("commons-io:commons-io:${commonsIoVersion}")
+    implementation("org.apache.commons:commons-lang3:${commonsLangVersion}")
+    //aspectj
+    implementation("org.aspectj:aspectjweaver:${aspectjVersion}")
+    implementation("org.aspectj:aspectjrt:${aspectjVersion}")
+    //assertj
+    implementation("org.assertj:assertj-core:${assertjVersion}")
+    //xmlUnit
+    implementation("org.xmlunit:xmlunit-legacy:${xmlUnitVersion}")
+    //logging
+    testImplementation("org.slf4j:slf4j-simple:${slf4jVersion}")
+    implementation("org.apache.logging.log4j:log4j-api:${log4jVersion}")
+    implementation("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+    implementation "io.github.bonigarcia:webdrivermanager:5.6.2"
+
+    //json
+    implementation("com.googlecode.json-simple:json-simple:${jsonVersion}")
+
+    //JDBC
+    implementation files("lib/ojdbc8.jar")//compile group: 'com.oracle.jdbc', name: 'ojdbc8', version: '12.2.0.1'
+
+    //sikuli
+    //implementation("com.sikulix:sikulixapi:${sikulixapiVersion}")
+    implementation group: 'com.sikulix', name: 'sikulixapi', version: '2.0.5'
+}
+
+compileJava {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+    options.encoding = 'windows-1252'
+}
+
+compileTestJava {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+    options.encoding = 'windows-1252'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'windows-1252'
+}
+
+if (!project.hasProperty("testPath"))
+{
+    ext.testPath = "gradle.GradleTest"
+}
+else
+{
+    ext.testPath = project.getProperty("testPath")
+}
+
+task jenkinsTest(type: Test) {
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.${testPath}"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+    description = "Runs Automation Tests"
+    classpath += sourceSets.main.runtimeClasspath
+}
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Navigator Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+Navigator Tests - Legal
+ */
+task navigationLegalDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.legal.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task navigationLegalUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.legal.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Navigator Tests - Risk user Risk content
+ */
+task navigationRiskRiskDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.risk.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task navigationRiskRiskUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.risk.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Navigator Tests - Risk user Shared content
+ */
+task navigationRiskSharedDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.shared.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task navigationRiskSharedUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.shared.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Navigator Tests - Carswell
+ */
+task navigationCarswellDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.carswell.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task navigationCarswellUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.carswell.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Navigator Tests - All
+ */
+task navigationAllDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.carswell.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.legal.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.risk.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.shared.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task navigationAllUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.carswell.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.legal.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.risk.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.navigation.risk.shared.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Navigator Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Smoke Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+Smoke Tests - Delta
+ */
+task smokeDeltaDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.delta.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task smokeDeltaUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.delta.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Smoke Tests - Rendition
+ */
+task smokeRenditionDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.rendition.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task smokeRenditionUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.rendition.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Smoke Tests - Section
+ */
+task smokeSectionDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.section.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task smokeSectionUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.section.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Smoke Tests - SourceNavigate
+ */
+task smokeSourceNavigateDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.sourcenavigate.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task smokeSourceNavigateUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.sourcenavigate.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Smoke Tests - All
+ */
+task smokeAllDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task smokeAllUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.smoke.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Smoke Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Source Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+Source Tests - BTS
+ */
+task sourceBTSDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.bts.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceBTSUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.bts.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Source Tests - Set1
+ */
+task sourceSet1DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceSet1UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Source Tests - Set2
+ */
+task sourceSet2DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceSet2UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Source Tests - Set3
+ */
+task sourceSet3DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceSet3UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Source Tests - Add Content
+ */
+task sourceAddContentDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.addcontent.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceAddContentUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.addcontent.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Source Tests - All
+ */
+task sourceAllDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set1.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set2.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceAllUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set1.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set2.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Source Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Hierarchy Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task hierarchyDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.publishing.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.tagassignment.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task hierarchyUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.publishing.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.tagassignment.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Hierarchy Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Audits Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task auditsDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.audits.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task auditsUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "false"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.audits.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Audits Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* OLD NOD Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task oldNODDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nod.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task oldNODUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nod.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* OLD NOD Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Tools Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+Tools Tests
+ */
+task toolsDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.tagassignment.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task toolsUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.tagassignment.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Tools Tests - Script Maintenance
+ */
+task toolsScriptMaintenanceDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.scriptmaintenance.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task toolsScriptMaintenanceUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.scriptmaintenance.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Tools Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* NOD Angular Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+NOD Angular Tests
+ */
+task nodAngularDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.ReportsTests.downloadLatestReportTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelEverythingTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelFilteredAndSortedColumnsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelSelectedRowsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelWithHiddenAndSwappedColumnsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.subscribedCasesCanadaTableLayoutTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportLtsNovusLoadTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowWithEmptyFieldTest"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task nodAngularUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "false"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.ReportsTests.downloadLatestReportTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelEverythingTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelFilteredAndSortedColumnsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelSelectedRowsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelWithHiddenAndSwappedColumnsTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.subscribedCasesCanadaTableLayoutTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportLtsNovusLoadTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowWithEmptyFieldTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowWithEmptyFieldTest"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+NOD Angular Tests - Reports, Subscribed Cases, Imports
+ */
+task nodAngularReportsSubscribedCasesImportsDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.ReportsTests.downloadLatestReportTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelEverythingTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelFilteredAndSortedColumnsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelSelectedRowsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelWithHiddenAndSwappedColumnsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.subscribedCasesCanadaTableLayoutTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportLtsNovusLoadTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task nodAngularReportsSubscribedCasesImportsUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.ReportsTests.downloadLatestReportTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelEverythingTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelFilteredAndSortedColumnsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelSelectedRowsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.exportToExcelWithHiddenAndSwappedColumnsTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.SubscribedCasesTests.subscribedCasesCanadaTableLayoutTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportLtsNovusLoadTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+NOD Angular Tests - Workflow, FTP
+ */
+task nodAngularWorkflowFTPDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowWithEmptyFieldTest"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task nodAngularWorkflowFTPUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.ImportCourtTeamRoutingTests.importCourtTeamRoutingWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODBatchMergeTests.initiateNODBatchMergeWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODDataValidationTests.initiateNODDataValidationWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUnmergedReportTests.initiateNODUnmergedReportWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateNODUpdateTests.initiateNODUpdateWorkflowWithEmptyFieldTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nodAngular.tools.InitiateXUSSCUpdateTests.initiateXUSSCUpdateWorkflowWithEmptyFieldTest"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* NOD Angular Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* TaxDeDupe Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task taxDeDupeDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.AddAmendDeleteTaxTypeTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task taxDeDupeUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.tools.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.source.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.tagassignment.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.AddAmendDeleteTaxTypeTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* TaxDeDupe Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Popnames Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task popnamesDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.popnames.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task popnamesUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.popnames.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Popnames Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Dynamic Scrolling Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+/*
+Dynamic Scrolling Tests
+ */
+task dynamicScrollingDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertChildTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertPageForcerTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertQueryTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertFeatureTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.FindAndReplaceSourceTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.FindAndReplaceHierarchyTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertTargetLinkMarkupTests.insertTargetLinkMarkupTargetTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.SubsectionGenerationAndValidationTests.subsectionValidationTargetTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.AddAmendDeleteTaxTypeTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.RemoveWrapperTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.ViewTests.viewDynamicScrollingOnWipVersionListTargetLegalTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.DeleteSubsectionsTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.DeleteSubsectionsTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.StatPagesTests.reorderFromTopAndRebuildSourceLegalTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.AutomaticCreditGenerationTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.CopyBetweenSourceAndTargetTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.*"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertChildTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertPageForcerTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertQueryTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertFeatureTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.FindAndReplaceSourceTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.FindAndReplaceHierarchyTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertTargetLinkMarkupTests.insertTargetLinkMarkupTargetTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.SubsectionGenerationAndValidationTests.subsectionValidationTargetTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.AddAmendDeleteTaxTypeTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.RemoveWrapperTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.ViewTests.viewDynamicScrollingOnWipVersionListTargetLegalTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.DeleteSubsectionsTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.DeleteSubsectionsTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.StatPagesTests.reorderFromTopAndRebuildSourceLegalTest"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.AutomaticCreditGenerationTests"
+        excludeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.CopyBetweenSourceAndTargetTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling Tests - AutoIT
+ */
+task dynamicScrollingAutoITDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertQueryTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertFeatureTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.FindAndReplaceSourceTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.FindAndReplaceHierarchyTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertTargetLinkMarkupTests.insertTargetLinkMarkupTargetTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.SubsectionGenerationAndValidationTests.subsectionValidationTargetTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.RemoveWrapperTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.ViewTests.viewDynamicScrollingOnWipVersionListTargetLegalTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.DeleteSubsectionsTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.DeleteSubsectionsTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.StatPagesTests.reorderFromTopAndRebuildSourceLegalTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.AutomaticCreditGenerationTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.CopyBetweenSourceAndTargetTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingAutoITUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertQueryTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertFeatureTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.FindAndReplaceSourceTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.FindAndReplaceHierarchyTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.InsertTargetLinkMarkupTests.insertTargetLinkMarkupTargetTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.SubsectionGenerationAndValidationTests.subsectionValidationTargetTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.RemoveWrapperTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.ViewTests.viewDynamicScrollingOnWipVersionListTargetLegalTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.DeleteSubsectionsTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.DeleteSubsectionsTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.StatPagesTests.reorderFromTopAndRebuildSourceLegalTest"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.AutomaticCreditGenerationTests"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.CopyBetweenSourceAndTargetTests"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling Source Tests
+ */
+task dynamicScrollingSourceDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingSourceUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling SourceSet1 Tests
+ */
+task dynamicScrollingSourceSet1DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingSourceSet1UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling SourceSet2 Tests
+ */
+task dynamicScrollingSourceSet2DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingSourceSet2UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling SourceSet3 Tests
+ */
+task dynamicScrollingSourceSet3DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingSourceSet3UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.source.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling Target Tests
+ */
+task dynamicScrollingTargetDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingTargetUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling TargetSet1 Tests
+ */
+task dynamicScrollingTargetSet1DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingTargetSet1UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set1.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling TargetSet2 Tests
+ */
+task dynamicScrollingTargetSet2DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingTargetSet2UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set2.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling TargetSet3 Tests
+ */
+task dynamicScrollingTargetSet3DEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingTargetSet3UATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.target.set3.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+/*
+Dynamic Scrolling SourceTarget Tests
+ */
+task dynamicScrollingSourceTargetDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task dynamicScrollingSourceTargetUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.dynamicscrolling.sourcetarget.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Dynamic Scrolling Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Publishing UI Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task publishingUIDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.publishing.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.publishing.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task publishingUIUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.hierarchy.publishing.*"
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.publishing.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Publishing UI Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Source Navigate Angular Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task sourceNavigateAngularDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.sourcenavigateangular.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task sourceNavigateAngularUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "false"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.sourcenavigateangular.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Source Navigate Angular Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Nort Extractor Tests - Start
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+task nortExtractorDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nortextractor.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task nortExtractorUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.nortextractor.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+/*
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+* Nort Extractor Tests - End
+************************************************************************************************************************
+************************************************************************************************************************
+************************************************************************************************************************
+ */
+
+task exampleDEVTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "dev"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.example.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+
+task exampleUATTests(type: Test) {
+    systemProperty "ENVIRONMENT_TO_RUN", "uat"
+    systemProperty "HEADLESS_MODE", "true"
+    filter {
+        includeTestsMatching "com.thomsonreuters.codes.codesbench.quality.tests.example.*"
+    }
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}

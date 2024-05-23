@@ -1,0 +1,20 @@
+package com.thomsonreuters.codes.codesbench.quality.utilities.database.tools;
+
+public class ProductTagDatabaseConstants
+{
+    public static final String DELETE_FROM_SCRIPT_PUBTAG_STATEMENT_STRING = "delete from script_pubtag where script_location_id = 1 and script_num = ? AND PUBTAG = ?";
+
+    public static final String DELETE_PUB_TOC_NODE_SCRIPT_ASSIGNMENT = "delete from PUB_TOC_NODE_SCRIPT_ASSIGNMENT where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_TOC_NODE_SCRIPT_ASSIGNMENT ="delete from TOC_NODE_SCRIPT_ASSIGNMENT where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_QUERY_NOTE ="delete from QUERY_NOTE where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_ATTRIBUTES ="delete from SCRIPT_ATTRIBUTES where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_COMMAND ="delete from SCRIPT_COMMAND where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_DEPENDENCY_DEPENDANT ="delete from SCRIPT_DEPENDENCY where DEPENDANT_ON_SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_DEPENDENCY ="delete from SCRIPT_DEPENDENCY where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_VOLUME_STATUS ="delete from SCRIPT_VOLUME_STATUS where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT_VALID_CONTENT_SET ="delete from SCRIPT_VALID_CONTENT_SET where SCRIPT_ID in (select script_id from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?))";
+    public static final String DELETE_SCRIPT = "delete from script where SCRIPT_NUM  = ? AND LONG_NAME = ? AND SHORT_NAME  = ? AND CREATED_BY = ? AND script_location_id = 1 AND PRODUCT_TYPE_ID IN (SELECT PRODUCT_TYPE_ID FROM SCRIPT_PRODUCT_TYPE WHERE DISPLAY_NAME = ?)";
+
+    public static final String ADD_PRODUCT_TAG_TO_NODE = "insert into TOC_NODE_SCRIPT_ASSIGNMENT(NODE_UUID, SCRIPT_ID, CS_ID) values(?, ?, ?)";
+    public static final String DELETE_PRODUCT_TAG_FROM_NODE = "delete from TOC_NODE_SCRIPT_ASSIGNMENT where NODE_UUID = ? and SCRIPT_ID = ? and CS_ID = ?";
+}

@@ -1,0 +1,11 @@
+/.idea
+/bin
+/failed_test_info
+*.iml
+*.log*
+/.tests.gradle
+/build
+/doc
+/target
+/.gradle
+/commonFiles/TestFiles/Temp\ XML\ Doc\ For\ Comparisons.xml

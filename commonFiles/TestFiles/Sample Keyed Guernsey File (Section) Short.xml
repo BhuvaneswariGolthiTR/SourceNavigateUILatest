@@ -1,0 +1,52 @@
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by West Publishing Corp. dba (West Publishing Corp. dba) -->
+<content.set>
+   <section>
+		<mp21>counterfeiting and piracy of products;</mp21>
+		<mp21>environmental crime;</mp21>
+		<mp21>murder, grievous bodily injury;</mp21>
+		<table>
+			<title/>
+			<tgroup>
+			<colspec colname="c1"/>
+			<colspec colname="c2"/>
+			<colspec colname="c3"/>
+			<colspec colname="c4"/>
+			<thead/>
+				<tbody>
+					<row>
+						<entry align="center"> 
+						</entry>
+						<entry align="center">
+						<bold>Lower and Standard Risk (CDD)</bold>
+						</entry>
+						<entry align="center">
+						<bold>Higher Risk (EDD)</bold>
+						</entry>
+						<entry align="center"><bold>Foreign PEPs &amp; Higher Risk Domestic PEPs</bold> (as per Code para 14 in addition to EDD where applicable)
+						</entry>
+					</row>
+					<row>
+						<entry align="left"><bold>Identification information</bold><endline/>
+							  (Customer)
+						</entry>
+						<entry align="center">Required before or during the formation of the relationship
+						</entry>
+						<entry morerows="3" align="center" valign="middle">Consider additional information and verification in addition to standard CDD requirements.
+						</entry>
+						<entry morerows="5" align="center" valign="middle">As per standard or higher risk as determined by risk rating
+						</entry>
+					</row>
+					<row>
+						<entry align="left"><bold>Verification of that information</bold><endline/>
+							  (Customer)
+						</entry>
+						<entry align="left">May be undertaken following the establishment of the business relationship in <bold>very limited circumstances</bold>
+						</entry>
+					</row>
+				</tbody>
+			<tfoot/>
+			</tgroup>
+		</table>
+<scl>[46 FR 17757, Mar. 20, 1981, as amended at 47 FR 26820, June 22, 1982;  59 FR 5946, Feb. 9, 1994;  73 FR 979, Jan. 4, 2008]</scl>
+  </section>
+</content.set>

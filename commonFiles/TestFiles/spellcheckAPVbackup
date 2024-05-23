@@ -1,0 +1,396 @@
+XML backup for spellcheck tests
+Rendition: IF4BB8E306B0F11E291FECDF020830FCE
+
+
+<source.rendition artifact-type="bill" ID="IF4BB8E306B0F11E291FECDF020830FCE" official.status="APV" year="2012">
+  <source.lineage.properties ID="IF4BB67206B0F11E291FECDF020830FCE">
+    <jurisdiction ID="I4FF8C270296211EDA0BDB081001BFF2E">
+      <metadata.block owner="I4FF8C270296211EDA0BDB081001BFF2E"/>
+      <text>IA</text>
+    </jurisdiction>
+    <class.name ID="I4FF8C271296211EDA0BDB081001BFF2E">
+      <metadata.block owner="I4FF8C271296211EDA0BDB081001BFF2E"/>
+      <text>CHAPTER</text>
+    </class.name>
+    <class.number ID="I4FF8C272296211EDA0BDB081001BFF2E">
+      <metadata.block owner="I4FF8C272296211EDA0BDB081001BFF2E"/>
+      <text>123</text>
+    </class.number>
+  </source.lineage.properties>
+  <source.front ID="I4FF8E980296211EDA0BDB081001BFF2E" version="1" docid="I4FF8E981296211EDA0BDB081001BFF2E">
+    <para ID="I8DB54D710C3611EDB9A8966D1036B51F">
+      <metadata.block owner="I8DB54D710C3611EDB9A8966D1036B51F">
+        <md.mnem>sch</md.mnem>
+        <modified.by>TLE TCBA-BOT 07/25/2022</modified.by>
+      </metadata.block>
+      <paratext>(Halcyonst-6755: SCHError)</paratext>
+    </para>
+    <law.tracking.no ID="I2078A480B8CD11E2A382F5CD83752D4C">
+      <metadata.block owner="I2078A480B8CD11E2A382F5CD83752D4C">
+        <md.mnem>g</md.mnem>
+      </metadata.block>
+      <text>IA201210</text>
+    </law.tracking.no>
+    <para ID="I351F3250979F11E694B4B1364E26A14B">
+      <metadata.block owner="I351F3250979F11E694B4B1364E26A14B">
+        <md.mnem>scp</md.mnem>
+        <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+      </metadata.block>
+      <paratext>Ch. 123 (Halcyonst-6755: SCPError)</paratext>
+    </para>
+    <session ID="I207D8680B8CD11E2A382F5CD83752D4C" type="2RG">
+      <metadata.block owner="I207D8680B8CD11E2A382F5CD83752D4C">
+        <md.mnem>dtype</md.mnem>
+        <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+      </metadata.block>
+      <text>R2 (Halcyonst-6755: DTYPEError)</text>
+    </session>
+    <bill.info ID="I2080E1E0B8CD11E2A382F5CD83752D4C" type="HF" num="589">
+      <metadata.block owner="I2080E1E0B8CD11E2A382F5CD83752D4C">
+        <md.mnem>hg1</md.mnem>
+        <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+      </metadata.block>
+      <text>Ch. 1005 (H.F. 589) (Halcyonst-6755: HGOneError)</text>
+    </bill.info>
+    <west.id ID="I208304C0B8CD11E2A382F5CD83752D4C">
+      <metadata.block owner="I208304C0B8CD11E2A382F5CD83752D4C">
+        <md.mnem>hg2</md.mnem>
+        <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+      </metadata.block>
+      <text>West&apos;s No. 6 (Halcyonst-6755: HGTwoError)</text>
+    </west.id>
+    <para ID="I941F13C5B8CC11E290DACF0D71C7FD68">
+      <metadata.block owner="I941F13C5B8CC11E290DACF0D71C7FD68">
+        <md.mnem>toa</md.mnem>
+      </metadata.block>
+      <paratext>AN ACT RELATING TO AN OFFENSE INVOLVING AGRICULTURAL OPERATIONS, AND PROVIDING PENALTIES, AND INCLUDING EFFECTIVE DATE PROVISIONS.</paratext>
+    </para>
+    <para ID="I941F13C6B8CC11E290DACF0D71C7FD68">
+      <metadata.block owner="I941F13C6B8CC11E290DACF0D71C7FD68">
+        <md.mnem>beit</md.mnem>
+      </metadata.block>
+      <paratext>BE IT ENACTED BY THE GENERAL ASSEMBLY OF THE STATE OF IOWA:</paratext>
+    </para>
+    <publisheddatetime ID="I941F13C7B8CC11E290DACF0D71C7FD68">
+      <metadata.block owner="I941F13C7B8CC11E290DACF0D71C7FD68">
+        <md.mnem>dbdl</md.mnem>
+      </metadata.block>
+      <text>03052012</text>
+    </publisheddatetime>
+  </source.front>
+  <source.body ID="I4FF937A0296211EDA0BDB081001BFF2E">
+    <source.note>
+      <text>THIS DOC IS FOR QED SPELLCHECK TESTS ONLY! DO NOT EDIT!</text>
+    </source.note>
+    <source.section ID="I208575C0B8CD11E2A382F5CD83752D4C" version="1" docid="I4FF9ACD0296211EDA0BDB081001BFF2E" num="1">
+      <para ID="I941F13CAB8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I941F13CAB8CC11E290DACF0D71C7FD68">
+          <md.mnem>scp3</md.mnem>
+        </metadata.block>
+        <paratext>&sect;&ensp;1</paratext>
+      </para>
+      <intro.para ID="I941F13CBB8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I941F13CBB8CC11E290DACF0D71C7FD68">
+          <md.mnem>sip</md.mnem>
+        </metadata.block>
+        <text>Section 1.&emsp;Section 717A.1, Code 2011, is amended by adding the following new subsection:</text>
+      </intro.para>
+      <cornerpiece ID="I941F13CCB8CC11E290DACF0D71C7FD68" type="cp">
+        <metadata.block owner="I941F13CCB8CC11E290DACF0D71C7FD68">
+          <md.mnem>cp</md.mnem>
+        </metadata.block>
+        <cornerpiece.text>&sect;&ensp;717A.1</cornerpiece.text>
+      </cornerpiece>
+      <delta ID="I208E4F60B8CD11E2A382F5CD83752D4C" action="add" level="subsection">
+        <target.location ID="I209183B0B8CD11E2A382F5CD83752D4C">
+          <target.location.section>&sect; 717A.1</target.location.section>
+          <target.location.subsection>2A</target.location.subsection>
+        </target.location>
+        <para ID="I93941B220C2A11ED8BAEF00561F7F8A0">
+          <metadata.block owner="I93941B220C2A11ED8BAEF00561F7F8A0">
+            <md.mnem>sstrf</md.mnem>
+            <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+          </metadata.block>
+          <paratext>(Halcyonst-6755: SSTRFError)</paratext>
+        </para>
+        <para ID="I93941B2E0C2A11ED8BAEF00561F7F8A0">
+          <metadata.block owner="I93941B2E0C2A11ED8BAEF00561F7F8A0">
+            <md.mnem>sstrt</md.mnem>
+            <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+          </metadata.block>
+          <paratext>(Halcyonst-6755: SSTRTError)</paratext>
+        </para>
+        <para ID="I93941B3A0C2A11ED8BAEF00561F7F8A0">
+          <metadata.block owner="I93941B3A0C2A11ED8BAEF00561F7F8A0">
+            <md.mnem>sster</md.mnem>
+            <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+          </metadata.block>
+          <paratext>(Halcyonst-6755: SSTERError)</paratext>
+        </para>
+        <para ID="I93941B460C2A11ED8BAEF00561F7F8A0">
+          <metadata.block owner="I93941B460C2A11ED8BAEF00561F7F8A0">
+            <md.mnem>sste</md.mnem>
+            <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+          </metadata.block>
+          <paratext>(Halcyonst-6755: SSTEError)</paratext>
+        </para>
+        <para ID="I941F3AD2B8CC11E290DACF0D71C7FD68">
+          <metadata.block owner="I941F3AD2B8CC11E290DACF0D71C7FD68">
+            <md.mnem>sstea</md.mnem>
+            <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+          </metadata.block>
+          <paratext>ss. 2A (Halcyonst-6755: SSTEAError)</paratext>
+        </para>
+        <part ID="I941FFE20B8CC11E290DACF0D71C7FD68" type="Subsection">
+          <subsection ID="I941FD710B8CC11E290DACF0D71C7FD68">
+            <metadata.block owner="I941FD710B8CC11E290DACF0D71C7FD68">
+              <md.head.info>
+                <md.label.designator>2A</md.label.designator>
+              </md.head.info>
+            </metadata.block>
+            <para ID="I0C0B91580C4311EDA93E842FDC06D740">
+              <metadata.block owner="I0C0B91580C4311EDA93E842FDC06D740">
+                <md.mnem>smp</md.mnem>
+                <modified.by>TLE TCBA-BOT 07/25/2022</modified.by>
+              </metadata.block>
+              <paratext> tetstingg </paratext>
+            </para>
+            <para ID="I93941B5C0C2A11ED8BAEF00561F7F8A0">
+              <metadata.block owner="I93941B5C0C2A11ED8BAEF00561F7F8A0">
+                <md.mnem>smp</md.mnem>
+                <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+              </metadata.block>
+              <paratext>(Halcyonst-6755: SMPError)</paratext>
+            </para>
+            <para ID="IF73883C8037B11EDB0B8B99A12B970EE">
+              <metadata.block owner="IF73883C8037B11EDB0B8B99A12B970EE">
+                <md.mnem>smp</md.mnem>
+                <modified.by>TLE TCBC-BOT 07/25/2022</modified.by>
+              </metadata.block>
+              <paratext>(Halcyonst-6182 markup word test:
+                <bold> markupMisspelledTestsss</bold>)
+              </paratext>
+            </para>
+            <para ID="IAC82AD9C037711ED97C7B29BFEF66CE5">
+              <metadata.block owner="IAC82AD9C037711ED97C7B29BFEF66CE5">
+                <md.mnem>b</md.mnem>
+                <modified.by>TLE TCBA-BOT 07/14/2022</modified.by>
+              </metadata.block>
+              <paratext>Halcyonst-6182 tabular entry test: tabularEntryTestsss</paratext>
+            </para>
+            <para ID="I941F3AD3B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I941F3AD3B8CC11E290DACF0D71C7FD68">
+                <md.mnem>smp</md.mnem>
+              </metadata.block>
+              <paratext>
+                <underscore>NEW SUBSECTION</underscore>. &ensp;2A.&emsp;&ldquo;
+                <wordphrase/>Agricultural production facility
+                <wordphrase/>&rdquo; means an animal facility as defined in subsection 4, paragraph &ldquo;a&rdquo;, or a crop operation property.
+              </paratext>
+            </para>
+            <para ID="IF7C2E15802EA11EDBF5182F3F948B558">
+              <metadata.block owner="IF7C2E15802EA11EDBF5182F3F948B558">
+                <md.mnem>smp</md.mnem>
+                <modified.by>TLE TCBA-BOT 07/13/2022</modified.by>
+              </metadata.block>
+              <paratext>Halcyonst-6442 Space between word and dot test: seq. spaceBetweenWordAndDot</paratext>
+            </para>
+          </subsection>
+        </part>
+      </delta>
+    </source.section>
+    <source.section ID="I2097C540B8CD11E2A382F5CD83752D4C" version="1" docid="I4FFABE40296211EDA0BDB081001BFF2E" num="2">
+      <para ID="I941FFE23B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I941FFE23B8CC11E290DACF0D71C7FD68">
+          <md.mnem>scp3</md.mnem>
+        </metadata.block>
+        <paratext>&sect;&ensp;2</paratext>
+      </para>
+      <intro.para ID="I94202530B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I94202530B8CC11E290DACF0D71C7FD68">
+          <md.mnem>sip</md.mnem>
+        </metadata.block>
+        <text>Sec. 2.&emsp;
+          <underscore>NEW SECTION</underscore>.
+        </text>
+      </intro.para>
+      <delta ID="I20A1D760B8CD11E2A382F5CD83752D4C" action="add" level="section">
+        <target.location ID="I20A66B40B8CD11E2A382F5CD83752D4C">
+          <target.location.section>&sect; 717A.3A</target.location.section>
+        </target.location>
+        <part ID="I94202535B8CC11E290DACF0D71C7FD68" type="Cornerpiece">
+          <cornerpiece ID="I94202536B8CC11E290DACF0D71C7FD68" type="cp.add">
+            <metadata.block owner="I94202536B8CC11E290DACF0D71C7FD68">
+              <md.mnem>cpa</md.mnem>
+            </metadata.block>
+            <cornerpiece.text>&sect;&ensp;717A.3A</cornerpiece.text>
+          </cornerpiece>
+        </part>
+        <part ID="I94202537B8CC11E290DACF0D71C7FD68" type="Section.Name.Line">
+          <codes.head ID="I94202538B8CC11E290DACF0D71C7FD68">
+            <metadata.block owner="I94202538B8CC11E290DACF0D71C7FD68">
+              <md.mnem>snl</md.mnem>
+            </metadata.block>
+            <head.info>
+              <label.designator>717A.3A</label.designator>.&emsp;
+              <headtext>Agricultural production facility fraud</headtext>
+            </head.info>
+          </codes.head>
+        </part>
+        <part ID="I9424E020B8CC11E290DACF0D71C7FD68" type="Text">
+          <subsection ID="I94246AF0B8CC11E290DACF0D71C7FD68">
+            <metadata.block owner="I94246AF0B8CC11E290DACF0D71C7FD68">
+              <md.head.info>
+                <md.label.designator>1</md.label.designator>
+              </md.head.info>
+            </metadata.block>
+            <para ID="I94204C40B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94204C40B8CC11E290DACF0D71C7FD68">
+                <md.mnem>smp</md.mnem>
+              </metadata.block>
+              <paratext>1.&emsp;A person is guilty of agricultural production facility fraud if the person willfully does any of the following:</paratext>
+            </para>
+            <subsection ID="I94246AF1B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94246AF1B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>a</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C41B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C41B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>a.&emsp;Obtains access to an agricultural production facility by false pretenses.</paratext>
+              </para>
+            </subsection>
+            <subsection ID="I94246AF2B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94246AF2B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>b</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C42B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C42B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>b.&emsp;Makes a false statement or representation as part of an application or agreement to be employed at an agricultural production facility, if the person knows the statement to be false, and makes the statement with an intent to commit an act not authorized by the owner of the agricultural production facility, knowing that the act is not authorized.</paratext>
+              </para>
+            </subsection>
+          </subsection>
+          <subsection ID="I94246AF3B8CC11E290DACF0D71C7FD68">
+            <metadata.block owner="I94246AF3B8CC11E290DACF0D71C7FD68">
+              <md.head.info>
+                <md.label.designator>2</md.label.designator>
+              </md.head.info>
+            </metadata.block>
+            <para ID="I94204C43B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94204C43B8CC11E290DACF0D71C7FD68">
+                <md.mnem>smp</md.mnem>
+              </metadata.block>
+              <paratext>2.&emsp;A person who commits agricultural production facility fraud under subsection 1 is guilty of the following:</paratext>
+            </para>
+            <subsection ID="I94249200B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94249200B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>a</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C44B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C44B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>a.&emsp;For the first conviction, a serious misdemeanor.</paratext>
+              </para>
+            </subsection>
+            <subsection ID="I94249201B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94249201B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>b</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C45B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C45B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>b.&emsp;For a second or subsequent conviction, an aggravated misdemeanor.</paratext>
+              </para>
+            </subsection>
+          </subsection>
+          <subsection ID="I94249202B8CC11E290DACF0D71C7FD68">
+            <metadata.block owner="I94249202B8CC11E290DACF0D71C7FD68">
+              <md.head.info>
+                <md.label.designator>3</md.label.designator>
+              </md.head.info>
+            </metadata.block>
+            <subsection ID="I94249203B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94249203B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>a</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C46B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C46B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>3.&emsp;a.&emsp;A person who conspires to commit agricultural production facility fraud under subsection 1 is subject to the provisions of chapter 706. &ensp;A person who aids and abets in the commission of agricultural production facility fraud under subsection 1 is subject to the provisions of chapter 703. &ensp;When two or more persons, acting in concert, knowingly participate in committing agricultural production facility fraud under subsection 1, each person is responsible for the acts of the other person as provided in section 703.2. &ensp;A person who has knowledge that agricultural production facility fraud under subsection 1 has been committed and that a certain person committed it, and who does not stand in the relation of husband or wife to the person committing the agricultural production facility fraud under subsection 1, and who harbors, aids, or conceals the person committing the agricultural production facility fraud under subsection 1, with the intent to prevent the apprehension of the person committing the agricultural production facility fraud under subsection 1, is subject to section 703.3.</paratext>
+              </para>
+            </subsection>
+            <subsection ID="I94249204B8CC11E290DACF0D71C7FD68">
+              <metadata.block owner="I94249204B8CC11E290DACF0D71C7FD68">
+                <md.head.info>
+                  <md.label.designator>b</md.label.designator>
+                </md.head.info>
+              </metadata.block>
+              <para ID="I94204C47B8CC11E290DACF0D71C7FD68">
+                <metadata.block owner="I94204C47B8CC11E290DACF0D71C7FD68">
+                  <md.mnem>smp</md.mnem>
+                </metadata.block>
+                <paratext>b.&emsp;A trial information or an indictment relating to agricultural production facility fraud under subsection 1 need not contain allegations of vicarious liability as provided in chapter 703.</paratext>
+              </para>
+            </subsection>
+          </subsection>
+        </part>
+      </delta>
+    </source.section>
+    <source.section ID="I20ACFAF0B8CD11E2A382F5CD83752D4C" version="1" docid="I4FFC1DD0296211EDA0BDB081001BFF2E" num="3">
+      <para ID="I9424E023B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I9424E023B8CC11E290DACF0D71C7FD68">
+          <md.mnem>scp3</md.mnem>
+        </metadata.block>
+        <paratext>&sect;&ensp;3</paratext>
+      </para>
+      <para ID="I9424E024B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I9424E024B8CC11E290DACF0D71C7FD68">
+          <md.mnem>date</md.mnem>
+        </metadata.block>
+        <paratext>&emsp;</paratext>
+      </para>
+      <cornerpiece ID="I9424E025B8CC11E290DACF0D71C7FD68" type="cp">
+        <metadata.block owner="I9424E025B8CC11E290DACF0D71C7FD68">
+          <md.mnem>cp</md.mnem>
+        </metadata.block>
+        <cornerpiece.text>&emsp;</cornerpiece.text>
+      </cornerpiece>
+      <intro.para ID="I9424E026B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I9424E026B8CC11E290DACF0D71C7FD68">
+          <md.mnem>sip</md.mnem>
+        </metadata.block>
+        <text>Sec. 3.&emsp;Effective upon enactment. &ensp;This Act, being deemed of immediate importance, takes effect upon enactment.</text>
+      </intro.para>
+      <para ID="I9424E027B8CC11E290DACF0D71C7FD68">
+        <metadata.block owner="I9424E027B8CC11E290DACF0D71C7FD68">
+          <md.mnem>edat</md.mnem>
+        </metadata.block>
+        <paratext>&emsp;</paratext>
+      </para>
+    </source.section>
+  </source.body>
+  <source.end ID="I4FFC9300296211EDA0BDB081001BFF2E" version="1" docid="I4FFC9301296211EDA0BDB081001BFF2E">
+    <approval.date ID="I20B5FBA0B8CD11E2A382F5CD83752D4C">
+      <metadata.block owner="I20B5FBA0B8CD11E2A382F5CD83752D4C">
+        <md.mnem>apv</md.mnem>
+      </metadata.block>
+      <text>Approved March 2, 2012.</text>
+    </approval.date>
+  </source.end>
+</source.rendition>

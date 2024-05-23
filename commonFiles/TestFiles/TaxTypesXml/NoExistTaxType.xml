@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content.set>
+<grade>
+<hg2>TEST_NOT_EXIST_TAXTYPE</hg2>
+</grade>
+<section>
+<tax.type.tag>NULL</tax.type.tag>
+<cp>&sect;&ensp;1</cp>
+<snl>&sect;&ensp;1&emsp;Test with not exist Tax Type.</snl>
+<mp21>(a)&ensp;As used in this SECTION, &ldquo;department&rdquo; refers to the department of state revenue.</mp21>
+<mp21>(b)&ensp;Notwithstanding IC 6-3.5-1.1-3, the county council of a county described in IC 6-3.5-1.1-3.3, as added by this act, may adopt an ordinance to increase the county&rsquo;s county adjusted gross income tax rate after March 31, 2003, and before January 1, 2004.</mp21>
+<mp21>(c)&ensp;Notwithstanding IC 6-3.5-1.1-3, an ordinance adopted under this SECTION before June 1, 2003, takes effect July 1, 2003. In determining the certified distribution for the calendar year beginning January 1, 2004, as required under IC 6-3.5-1.1-9 to be performed before July 2, 2003, for a county adopting an ordinance within the time specified in this subsection, the department shall take into account the certified ordinance forwarded to the department under IC 6-3.5-1.1-3(c) in determining the amount of the county&rsquo;s certified distribution for the calendar year beginning January 1, 2004.</mp21>
+<mp21>(d)&ensp;Notwithstanding IC 6-3.5-1.1-3, an ordinance adopted under this SECTION after May 31, 2003, and before January 1, 2004, takes effect January 1, 2004. Not later than thirty (30) days after receiving the certified ordinance under IC 6-3.5-1.1-3(c) from a county adopting an ordinance within the time specified in this subsection, the department shall revise the county&rsquo;s certified distribution determined under IC 6-3.5-1.1-9 for the calendar year beginning January 1, 2004, to take into account the increased county adjusted gross income tax rate specified in the certified ordinance. Notwithstanding IC 6-3.5-1.1-10, as amended by this act, the first distribution reflecting the increased county adjusted gross income tax rate shall be made to the county treasurer beginning November 1, 2004.</mp21>
+<scl>(&sect;&ensp;1 enacted by Test with not exist Tax Type, &sect;&ensp;1, eff. 4-22-03.)</scl>
+</section>
+</content.set>

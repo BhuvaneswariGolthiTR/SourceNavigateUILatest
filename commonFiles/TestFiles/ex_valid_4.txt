@@ -1,0 +1,11 @@
+﻿<xampex>
+<smp><bold>TEST</bold></smp>
+<smp><ital>TEST DOCUMENT STUFF 1</ital></smp>
+<smp><bold>TEST DOCUMENT STUFF 2</bold></smp>
+<smp><bold>TEST DOCUMENT STUFF 3</bold></smp>
+<smp><bold>TEST DOCUMENT Conditions in securities markets TEST DOCUMENT</bold></smp>
+<smp><bold>TEST DOCUMENT Risks in EU sovereign debt markets: TEST DOCUMENT</bold> The recent negative economic news and mounting uncertainty concerning the effectiveness of policy measures depressed market confidence and was reflected in increased yields and higher variability, particularly in some more vulnerable economies. Pricing of risk remained low, as reflected by the still relatively high sovereign bond valuation, although this became increasingly volatile and fluctuated sharply, especially for two more vulnerable countries, signalling increasing market uncertainty.</smp> 
+<smp><bold>TEST DOCUMENT Market clustering: TEST DOCUMENT</bold> Bond yield correlation between sovereigns and corporates in the same jurisdiction continued to be broadly stable at high levels. Correlation among sovereigns declined a little, especially for some weaker economies, within a higher-dispersion context.</smp> 
+<smp><bold>TEST DOCUMENT Funding risk:</bold> Short-term funding requirements appear to have fallen across sectors (cf. R.21), with maturities remaining broadly constant. The important supervisory changes characterising the banking sector could improve the stability and soundness of the system. It should be noted, however, that liquidity risks may arise from country-specific differences, potential market imbalances and reduced incentives for market-makers in providing liquidity.</smp> 
+<smp>TEST DOCUMENT STUFF END</smp> 
+</xampex>

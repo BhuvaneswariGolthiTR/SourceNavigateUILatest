@@ -1,0 +1,15 @@
+\Q/build/\E.*
+\Q/buildTempLocation/\E.*
+\Q/dist/\E.*
+\Q/test-logs/\E.*
+\Q/test-output/\E.*
+\Q/Codes-CodesBench.iml\E
+\Q/.idea/\E.*
+\Q/failed_test_info/\E.*
+\Q/screenshots/\E.*
+\Q/lib/resolve/\E.*
+\Q/Codes-CodesBench.jar\E
+\Q/test-report/\E.*
+\Q/testLogs/\E.*
+\Q/testResults/\E.*
+\Q/ant/temp.log\E

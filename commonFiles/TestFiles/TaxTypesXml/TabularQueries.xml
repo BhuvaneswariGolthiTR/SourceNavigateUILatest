@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content.set>
+<section>
+ <tax.type.tag>PROP</tax.type.tag>
+<cp>&sect;&ensp;1</cp>
+<snl>&sect;&ensp;888&emsp;Test with Tabular Queries.</snl>
+ <stbl/>
+<mp21>(a)&ensp;As used in this SECTION, &ldquo;department&rdquo; refers to the department of state revenue.</mp21>
+<scl>(&sect;&ensp;1 enacted by Test with one Tax Type, &sect;&ensp;1, eff. 4-22-03.)</scl>
+</section>
+</content.set>
