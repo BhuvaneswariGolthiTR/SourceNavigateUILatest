@@ -147,4 +147,5 @@ public class SourceNavigateAngularPageElements
     public static final String RELOAD_DATA = "(//button[@class='btn btn-outline-secondary btn-sm mr-1' and @ngbtooltip='Reload table data'])[4]";
     public static final String RENDITION_SYSTEM_PROPERTIES_INPUT_FIELD = "//source-nav-Rendition-properties" + SECTION_PROPERTIES_INPUT_FIELD;
     public static final String CALENDAR_OPTION = SECTION_PROPERTIES_BOX_LABEL + "/following::button[@aria-label='Open calendar'][1]";
+    public static final String PRINT_PREVIEW="//span[text()='Rendition Print Preview']";
 }

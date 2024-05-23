@@ -10,25 +10,27 @@ import com.thomsonreuters.codes.codesbench.quality.utilities.annotations.CustomA
 import com.thomsonreuters.codes.codesbench.quality.utilities.annotations.CustomAnnotations.UserAnnotations.LEGAL;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.CommonDataMocking;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.SourceDataMockingNew;
+import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SourceDatapodConfiguration;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SourceDatapodObject;
+import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SrcContentType;
 import com.thomsonreuters.codes.codesbench.quality.utilities.dateAndTime.DateAndTimeUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.source.navigate.popups.PrintPreviewPageElements.PRINT_PREVIEW_PAGE_TITLE;
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.source.navigate.popups.UpdateYearOrSessionPageElements.WORKFLOW_LINK;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularContextMenuItemsPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularDeltaPageElements.*;
-import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.CALENDAR_OPTION;
-import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.FIRST_RENDITION_ROW;
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularSectionPageElements.SECTION_INSTRUCTIONS;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularSectionPageElements.SECTION_PROPERTIES_DIFFICULTY_LEVEL_DROPDOWN;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularTabsPageElements.ANY_TAB_NAME;
@@ -115,24 +117,24 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
 
         //Verifying fields in Rendition Properties Tab
         List<String> renditionViewModeLabels = Arrays.asList("Class Name ", "Delta Count ", "Document Subtype ", "Earliest Effective Date ", "Legislation Type ",
-                "Rendition Section Group ","First Title ","Content Type ","Document Type ","Document Number ");
+                "Rendition Section Group ", "First Title ", "Content Type ", "Document Type ", "Document Number ");
 
         assertThatRenditionFieldsViewOnlyMode(renditionViewModeLabels);
         assertThatTextFieldsAndCalendarOptions("Effective Date", "Approval Date");
         assertThatDisplayOfDropdowns("Assigned User", "Difficulty Level");
         assertThatDisplayOfTextArea("Rendition Instructions ");
 
-           String currentDate = DateAndTimeUtils.getCurrentDateMMddyyyyNoDelimeters();
-       sourceNavigateAngularPage().click(format(CALENDAR_OPTION, "Effective Date"));
+        String currentDate = DateAndTimeUtils.getCurrentDateMMddyyyyNoDelimeters();
+        sourceNavigateAngularPage().click(format(CALENDAR_OPTION, "Effective Date"));
         sourceNavigateAngularPage().sendTextToTextbox(format(LABEL_TEXT_FIELD, "Effective Date"), currentDate);
-       DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
 
         sourceNavigateAngularPage().click(format(CALENDAR_OPTION, "Approval Date"));
         sourceNavigateAngularPage().sendTextToTextbox(format(LABEL_TEXT_FIELD, "Approval Date"), currentDate);
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
 //
         // Selection User:TLE TCBA-BOT from Assigned USer Dropdown
-           sourceNavigateAngularPage().click(format(LABEL_TEXT_FIELD, "Assigned User"));
+        sourceNavigateAngularPage().click(format(LABEL_TEXT_FIELD, "Assigned User"));
         sourceNavigateAngularDeltaPage().sendKeys("TLE TCBA-BOT");
         sourceNavigateAngularLockReportPage().pressEnter();
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
@@ -185,13 +187,13 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
         String headerText = sourceNavigateAngularDeltaPage().getElementsText(HEADER);
         DateAndTimeUtils.takeNap(DateAndTimeUtils.THREE_SECONDS);
 
-        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText+" "));
+        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText + " "));
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
         assertThatDisplayOfPopUpElements("Confirmation", "Are you sure you want to cancel?", CANCEL_BUTTON, CONFIRM_BUTTON, CLOSE_UI_BUTTON);
         sourceNavigateAngularPage().click(SOURCE_NAV_ASSIGN_USER_CANCEL);
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
 
-        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText+" "));
+        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText + " "));
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
         assertThatDisplayOfPopUpElements("Confirmation", "Are you sure you want to cancel?", CANCEL_BUTTON, CONFIRM_BUTTON, CLOSE_UI_BUTTON);
 
@@ -199,7 +201,7 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
         assertThatPopUpMessageDisappearedOrNot("Are you sure you want to cancel?");
 
-        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText+" "));
+        sourceNavigateAngularPage().click(format(CLOSE_UI_BUTTON, headerText + " "));
         DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
         assertThatDisplayOfPopUpElements("Confirmation", "Are you sure you want to cancel?", CANCEL_BUTTON, CONFIRM_BUTTON, CLOSE_UI_BUTTON);
 
@@ -424,7 +426,7 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
 //        DateAndTimeUtils.takeNap(DateAndTimeUtils.FOUR_SECONDS);
         sourceNavigateAngularTabsPage().click(RENDITION_TAB);
         DateAndTimeUtils.takeNap(DateAndTimeUtils.FOUR_SECONDS);
-        
+
     }
 
     private static Stream<Arguments> provideRenditionUUID() {
@@ -471,7 +473,7 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
 
     /**
      * Test Case ID:724121_TC3
-     *Rendition Properties: Rendition properties tab: verify the changes cannot be saved when rendition is locked
+     * Rendition Properties: Rendition properties tab: verify the changes cannot be saved when rendition is locked
      */
     @ParameterizedTest(name = "Test: {displayName}; Index: {index}; Arguments: {arguments}")
     @MethodSource("provideRenditionUUID")
@@ -490,69 +492,105 @@ public class SNGeneralRenditionPropertiesPageTests extends SourceNavigateAngular
         sourceNavigateAngularPage().rightClickRenditions();
 
         boolean lockedStatus = sourceNavigateAngularRenditionPage().verifyLockIconStateOfRendition();
-            assertThatRenditionDisplaysLockIcon(lockedStatus);
-            try {
-                //Lock the rendition from UI
-                sourceNavigateAngularPage().clickContextMenuItem(EDIT);
-                DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
-                sourceNavigateAngularPage().clickContextMenuItem(RENDITION_CONTENT_MENU);
-                DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-                sourceNavigateAngularPage().switchToWindow("Iowa (Development) UAT - Dynamic Scrolling Editor");
-                editorPage().waitForPageLoaded();
-                editorPage().waitForElementGone(EditorPageElements.COMMAND_IN_PROGRESS);
-                editorPage().waitForElement(EditorToolbarPageElements.CLOSE_DOC);
-                editorPage().closeCurrentWindowIgnoreDialogue();
-
-                //Refresh the grid
-                editorPage().switchToWindow(SourceNavigateAngularPageElements.PAGE_TITLE);
-                sourceNavigateAngularPage().clickRefreshTableData();
-                DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
-                //Verify the lock icon for the rendition
-                assertThatRenditionDisplaysLockIcon(true);
-            } catch (Exception e) {
-                logger.information("Failed to lock rendition: " + e.getMessage());
-            }
-
-            //Section tab clicking and selecting first row
-            sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        assertThatRenditionDisplaysLockIcon(lockedStatus);
+        try {
+            //Lock the rendition from UI
+            sourceNavigateAngularPage().clickContextMenuItem(EDIT);
+            DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
+            sourceNavigateAngularPage().clickContextMenuItem(RENDITION_CONTENT_MENU);
             DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-            sourceNavigateAngularPage().clickContextMenuItem(RENDITION_PROPERTIES);
+            sourceNavigateAngularPage().switchToWindow("Iowa (Development) UAT - Dynamic Scrolling Editor");
+            editorPage().waitForPageLoaded();
+            editorPage().waitForElementGone(EditorPageElements.COMMAND_IN_PROGRESS);
+            editorPage().waitForElement(EditorToolbarPageElements.CLOSE_DOC);
+            editorPage().closeCurrentWindowIgnoreDialogue();
+
+            //Refresh the grid
+            editorPage().switchToWindow(SourceNavigateAngularPageElements.PAGE_TITLE);
+            sourceNavigateAngularPage().clickRefreshTableData();
             DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
 
-            //Select Assigned User value from dropdown
-            sourceNavigateAngularPage().click(format(LABEL_TEXT_FIELD, "Assigned User"));
-            sourceNavigateAngularDeltaPage().sendKeys("TLE TCBA-BOT");
-            sourceNavigateAngularLockReportPage().pressEnter();
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
-            //Click on Submit Button  and verify assigned user and difficulty level dropdown is saved
-            assertThatSectionPropertiesSubmitButtonIsDisabled();
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
-            // Selecting Difficulty level
-            sourceNavigateAngularDeltaPage().click(SECTION_PROPERTIES_DIFFICULTY_LEVEL_DROPDOWN);
-            sourceNavigateAngularDeltaPage().click(String.format(DIFFICULTY_LEVEL_DROPDOWN_VALUE, "E1"));
-            sourceNavigateAngularPage().waitForPageLoaded();
-
-            //Click on Submit Button  and verify assigned user and difficulty level dropdown is saved
-            assertThatSectionPropertiesSubmitButtonIsDisabled();
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
-            sourceNavigateAngularPage().click(CANCEL_BUTTON);
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
-            sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-            sourceNavigateAngularPage().clickContextMenuItem(RENDITION_PROPERTIES);
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-            assertThatSectionPropertiesSubmitButtonIsDisabled();
-
-            sourceNavigateAngularPage().click(CANCEL_BUTTON);
-            DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
-
+            //Verify the lock icon for the rendition
+            assertThatRenditionDisplaysLockIcon(true);
+        } catch (Exception e) {
+            logger.information("Failed to lock rendition: " + e.getMessage());
         }
+
+        //Section tab clicking and selecting first row
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickContextMenuItem(RENDITION_PROPERTIES);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        //Select Assigned User value from dropdown
+        sourceNavigateAngularPage().click(format(LABEL_TEXT_FIELD, "Assigned User"));
+        sourceNavigateAngularDeltaPage().sendKeys("TLE TCBA-BOT");
+        sourceNavigateAngularLockReportPage().pressEnter();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        //Click on Submit Button  and verify assigned user and difficulty level dropdown is saved
+        assertThatSectionPropertiesSubmitButtonIsDisabled();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        // Selecting Difficulty level
+        sourceNavigateAngularDeltaPage().click(SECTION_PROPERTIES_DIFFICULTY_LEVEL_DROPDOWN);
+        sourceNavigateAngularDeltaPage().click(String.format(DIFFICULTY_LEVEL_DROPDOWN_VALUE, "E1"));
+        sourceNavigateAngularPage().waitForPageLoaded();
+
+        //Click on Submit Button  and verify assigned user and difficulty level dropdown is saved
+        assertThatSectionPropertiesSubmitButtonIsDisabled();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        sourceNavigateAngularPage().click(CANCEL_BUTTON);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickContextMenuItem(RENDITION_PROPERTIES);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        assertThatSectionPropertiesSubmitButtonIsDisabled();
+
+        sourceNavigateAngularPage().click(CANCEL_BUTTON);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
     }
+
+    /**
+     * Test Case ID:722116_TC1
+     * Rendition Properties: Rendition print preview: verify the work flow status in workflow properties page
+     */
+    @EDGE
+    @LEGAL
+    @LOG
+    @Test
+    public void printPreviewWorkflowForRenditions() {
+        List<SourceDatapodObject> datapodObjects = new ArrayList<>();
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.APV.insert());
+        String docNumberFilter = renditionAPVUuid + " , " + datapodObjects.get(0).getRenditions().get(0).getRenditionUUID();
+        logger.information("rendition id" + docNumberFilter);
+        sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+        sourceNavigateAngularLeftSidePanePage().setFindValue("Rendition UUID", docNumberFilter);
+        sourceNavigateAngularLeftSidePanePage().clickFindButton();
+
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickContextMenuItem(VIEW);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
+        sourceNavigateAngularPage().click(PRINT_PREVIEW);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+        sourceNavigateAngularPage().click(WORKFLOW_LINK);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
+        workflowDetailsPage().switchToDetailsPage();
+        sourceNavigateAngularPage().waitForPageLoaded();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
+        workflowDetailsPage().waitTillWorkflowIsFinished();
+        Assertions.assertTrue(workflowDetailsPage().verifyWorkflowFinished(), "Workflow didn't finish");
+        workflowDetailsPage().closeWorkflowDetailPageAndSwitchToSourceNavigate();
+        sourceNavigateAngularPopUpPage().closeUi(PRINT_PREVIEW_PAGE_TITLE);
+    }
+}
 
 
 

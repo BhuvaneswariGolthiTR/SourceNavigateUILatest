@@ -6,5 +6,6 @@ public class SourceNavigateAngularSectionGroupPageElements
 {
     public static final String TOTAL_SECETION_GROUP_NUMBERS="//span[contains(text(),'Total section groups: ')]";
     public static final String CLEAR_FILTERS_SECTION_GROUP_TAB =  SOURCE_NAV_SECTIONGROUPS + CLEAR_FILTERS;
+    public static String SECTION_GROUP_NAME_DOCUMENT = SOURCE_NAV_SECTIONGROUPS_AG_GRID+"//div[text()='%s']/parent::div";
 
 }

@@ -882,4 +882,11 @@ public class SourceNavigateAngularAssertions extends SourceNavigateAngularBase {
                 .as("Input filed of '" + field + "' is not read only")
                 .isEqualTo("true");
     }
+
+    public void assertThatClearWarningFlagsActiveOrNot(){
+        assertThat(sourceNavigateAngularPage().isElementEnabled(CLEAR_WARNING_FLAGS + "/parent::div"))
+                .as("Clear Warning flag is not enabled")
+                .isTrue();
+    }
+
 }
