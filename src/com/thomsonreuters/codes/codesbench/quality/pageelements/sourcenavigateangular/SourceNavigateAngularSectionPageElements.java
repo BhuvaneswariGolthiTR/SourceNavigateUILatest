@@ -29,5 +29,10 @@ public class SourceNavigateAngularSectionPageElements {
     public static String LOCKED_ALERT_MESSAGE = "//div[@class='alert bento-alert alert-danger']/span";
     public static String SECTION_PROPERTIES_INPUT_FIELDS = "//div[@class='tab-content']//input";
     public static String SYSTEM_PROPERTIES_INPUT_FIELD = "//source-nav-section-properties" + SECTION_PROPERTIES_INPUT_FIELD;
+    public static String INSTRUCTION_NOTE_INPUT_FIELD = "//textarea[@id='instructionNote']";
+    public static String SECTION_INSTRUCTION_NOTE_INPUT_FIELD = "//input[@id='%s']";
+
+    public static String SUPPRESS_DATE_ON_WESTLAW_RADIOBUTTON= "//label[text()='%s']";
+            //"//input[@class='ng-pristine ng-valid ng-touched'][@type='radio']";
 
 }

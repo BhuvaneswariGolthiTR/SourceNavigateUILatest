@@ -76,6 +76,11 @@ public class SourceNavigateAngularPage extends BasePage
         click(SourceNavigateAngularPageElements.REFRESH_TABLE_DATA);
         waitForPageLoaded();
     }
+    public void clickRefreshSectionTableData()
+    {
+        click(SourceNavigateAngularPageElements.File_Refresh_SectionTableData);
+        waitForPageLoaded();
+    }
 
     public boolean isFilterIconExistsInColumnHeading(String columnName)
     {

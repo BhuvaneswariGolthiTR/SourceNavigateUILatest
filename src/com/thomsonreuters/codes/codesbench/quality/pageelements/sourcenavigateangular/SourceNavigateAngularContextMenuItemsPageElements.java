@@ -98,6 +98,7 @@ public class SourceNavigateAngularContextMenuItemsPageElements
     public static final String  RUN_CITE_LOCATE_INTEGRATION_STATUS_TOGGLE_BUTTON = "(//bento-toggle[contains(@role,switch)])[3]";
     public static final String  TOOL_BAR_MORE_OPTION = "//div[@class='dropdown']//button[@class='dropdown-toggle btn-toolbar']";
     public static final String RENDITION_CONTENT_MENU = "//div[@class='ag-menu-option']/span[text()='Rendition' or text()=' Rendition ']";
+    public static final String RENDITION_SECTION_MENU = "//div[@class='ag-menu-option']/span[text()='Section']";
     public static final String  CLASS_NUMBER="//label[text()='Class Number ']";
     public static final String  CLASS_NAME = "//label[text()='Class Name ']";
     public static final String RENDITION_TAB = "//a[text()='Rendition properties']";
@@ -109,4 +110,6 @@ public class SourceNavigateAngularContextMenuItemsPageElements
     public static final String DOCUMENT_TYPE = "//label[text()='Document Type ']";
     public static final String DOCUMENT_NUMBER =  "//label[text()= 'Document Number ']";
     public static final String DELTA_PROPERTIES = "//span[text()='Delta Properties']";
+    public static final String INTEGRATION_PROPERTIES = "//span[text()='Integration Properties']";
+    public static final String SECTIONS = "//span[contains(text(),'Sections')]";
 }

@@ -2523,12 +2523,12 @@ public class TestService extends TestSetupEdge
 		return annotationConfigApplicationContext.getBean(FileManagementPage.class);
 	}
 
-	protected SourceNavigateAngularPage sourceNavigateAngularPage()
+	protected static SourceNavigateAngularPage sourceNavigateAngularPage()
 	{
 		return annotationConfigApplicationContext.getBean(SourceNavigateAngularPage.class);
 	}
 
-	protected SourceNavigateAngularLeftSidePanePage sourceNavigateAngularLeftSidePanePage()
+	protected static SourceNavigateAngularLeftSidePanePage sourceNavigateAngularLeftSidePanePage()
 	{
 		return annotationConfigApplicationContext.getBean(SourceNavigateAngularLeftSidePanePage.class);
 	}

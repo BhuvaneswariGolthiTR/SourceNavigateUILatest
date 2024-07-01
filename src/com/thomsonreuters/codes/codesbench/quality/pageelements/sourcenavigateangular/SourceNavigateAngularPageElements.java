@@ -50,6 +50,8 @@ public class SourceNavigateAngularPageElements
     public static final String REFRESH_TABLE_DATA = "(//button[@ngbtooltip='Reload table data']/em[@class='bento-icon-refresh'])[2]";
     public static final String File_Size ="fileSize";
     public static final String File_Size_Filter ="//input[contains(@class,'ag-input-field-input ag-number-field-input')][1]";
+
+    public static final String File_Refresh_SectionTableData= "//*[@id='tab-13c0f75266a80a7fba3552bcdd0e1381']/bento-wizard-step[4]/div/source-nav-sections/source-nav-grid-toolbar/div/div[2]/button[1]";
     public static final String Save_View =SOURCE_NAV_RENDITIONS +"//button[text()='Save View']";
     public static final String View_Name = "//input[contains(@Id,'view-name')]";
     public static final String Submit_Button ="//button[contains(text(),'Submit')]";

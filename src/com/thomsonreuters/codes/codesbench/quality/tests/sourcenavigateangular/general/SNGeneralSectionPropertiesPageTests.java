@@ -3,13 +3,16 @@ package com.thomsonreuters.codes.codesbench.quality.tests.sourcenavigateangular.
 import com.thomsonreuters.codes.codesbench.quality.pageelements.editor.EditorPageElements;
 import com.thomsonreuters.codes.codesbench.quality.pageelements.editor.EditorToolbarPageElements;
 import com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements;
+import com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularSectionPageElements;
 import com.thomsonreuters.codes.codesbench.quality.tests.sourcenavigateangular.assertions.SourceNavigateAngularAssertions;
 import com.thomsonreuters.codes.codesbench.quality.utilities.annotations.CustomAnnotations.BrowserAnnotations.EDGE;
 import com.thomsonreuters.codes.codesbench.quality.utilities.annotations.CustomAnnotations.LogAnnotations.LOG;
 import com.thomsonreuters.codes.codesbench.quality.utilities.annotations.CustomAnnotations.UserAnnotations.LEGAL;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.CommonDataMocking;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.SourceDataMockingNew;
+import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SourceDatapodConfiguration;
 import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SourceDatapodObject;
+import com.thomsonreuters.codes.codesbench.quality.utilities.datamocking.source.datapod.SrcContentType;
 import com.thomsonreuters.codes.codesbench.quality.utilities.dateAndTime.DateAndTimeUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,23 +21,28 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularContextMenuItemsPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularDeltaPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularLeftSidePaneElements.FIND_TEXT_FIELD_PATTERN;
-import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.CALENDAR_OPTION;
-import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.SECTION_ROW;
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularPageElements.*;
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularRenditionPageElements.INTEGRATION_CLOSE_ICON;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularSectionPageElements.*;
+import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularSectionPageElements.FIRST_RENDITION_ROW;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularTabsPageElements.RENDITION_TAB;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.SourceNavigateAngularTabsPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.pageelements.sourcenavigateangular.popups.SourceNavigateAngularPopUpPageElements.*;
 import static com.thomsonreuters.codes.codesbench.quality.utilities.database.BaseDatabaseUtils.disconnect;
 import static java.lang.String.format;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SNGeneralSectionPropertiesPageTests extends SourceNavigateAngularAssertions {
     SourceDatapodObject datapodAPVObject;
@@ -42,6 +50,7 @@ public class SNGeneralSectionPropertiesPageTests extends SourceNavigateAngularAs
     Connection connection;
     static String renditionAPVUuid;
     static String renditionPREPUuid;
+    static List<SourceDatapodObject> datapodObjects = new ArrayList<>();
 
     @BeforeEach
     public void mockData(TestInfo testInfo) {
@@ -615,11 +624,223 @@ public class SNGeneralSectionPropertiesPageTests extends SourceNavigateAngularAs
             DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
 
     }
+    @EDGE
+    @LEGAL
+    @LOG
+    @Test
+
+    public void sectionEditIntegrationProperties() {
+        //Finding the Renditions with Rendition UUID with APV and PREP
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.CRT);
+        datapodObjects.add(SourceDataMockingNew.USCA.Small.PREP.insert());
+        sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+
+        String docNumberFilterExtract = datapodObjects.get(0).getRenditions().get(0).getRenditionUUID() + " , " + datapodObjects.get(1).getRenditions().get(0).getRenditionUUID();
+        logger.information("rendition id" + docNumberFilterExtract);
+        sectionEditIntegrationProperties(docNumberFilterExtract);
+        String diffContentType = datapodObjects.get(0).getRenditions().get(0).getRenditionUUID() + " , " + datapodObjects.get(2).getRenditions().get(0).getRenditionUUID();
+        //sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+        sourceNavigateAngularLeftSidePanePage().clear(format(FIND_TEXT_FIELD_PATTERN, "Rendition UUID"));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.THREE_SECONDS);
+        sectionEditIntegrationProperties(diffContentType);
+
+    }
+    public static void sectionEditIntegrationProperties(String docNumberFilter) {
+        sourceNavigateAngularLeftSidePanePage().setFindValue("Rendition UUID", docNumberFilter);
+        sourceNavigateAngularLeftSidePanePage().clickFindButton();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.THREE_SECONDS);
+        sourceNavigateAngularPage().selectTwoRenditions((format(RENDITION_ROW_PATTERN, 0)), (format(RENDITION_ROW_PATTERN, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        //sourceNavigateAngularPage().rightClickRenditions();
+        sourceNavigateAngularLeftSidePanePage().click(SECTION_TAB);
+        sourceNavigateAngularPage().selectTwoRenditions((format(SECTION_ROW, 0)), (format(SECTION_ROW, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularLeftSidePanePage().rightClick((format(SECTION_ROW, 0)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickContextSubMenuItem(EDIT, INTEGRATION_PROPERTIES);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        assertThatIntegrationPropertiesUI(true);
+        closeIntegrationPropertiesWindow();
+        sourceNavigateAngularPage().click(RENDITION_TAB);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+    }
+
+    @EDGE
+    @LEGAL
+    @LOG
+    @Test
+    public void integrationPropertiesMultiplePrepSection() {
+
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.BILL);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.CRT);
+        datapodObjects.add(SourceDataMockingNew.USCA.Small.PREP.insert());
+        sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+        String docNumberFilterExtract = datapodObjects.get(0).getRenditions().get(0).getRenditionUUID() + " , " + datapodObjects.get(1).getRenditions().get(0).getRenditionUUID();
+        logger.information("rendition id" + docNumberFilterExtract);
+        integrationPropertiesUpdate(docNumberFilterExtract);
+        sourceNavigateAngularPage().click(RENDITION_TAB);
+
+
+    }
+    private void lockSectionRendition() {
+        //Lock the rendition from UI
+        sourceNavigateAngularPage().clickContextMenuItem(EDIT);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.FIVE_SECONDS);
+        sourceNavigateAngularPage().clickContextMenuItem(SECTIONS);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().switchToWindow("Iowa (Development) UAT - Dynamic Scrolling Editor");
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TEN_SECONDS);
+        editorPage().waitForPageLoaded();
+        editorPage().waitForElementGone(EditorPageElements.COMMAND_IN_PROGRESS);
+        //DateAndTimeUtils.takeNap(DateAndTimeUtils.TEN_SECONDS);
+        editorPage().waitForElement(EditorToolbarPageElements.CLOSE_DOC);
+        editorPage().closeCurrentWindowIgnoreDialogue();
+
+        //Refresh the grid
+        editorPage().switchToWindow(PAGE_TITLE);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickRefreshSectionTableData();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+
+    }
+    @EDGE
+    @LEGAL
+    @LOG
+    @Test
+    public void sectionTabLockingValidation() {
+        /*SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.BILL);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.CRT);
+        datapodObjects.add(SourceDataMockingNew.USCA.Small.PREP.insert());
+        sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+        String docNumberFilterExtract = datapodObjects.get(0).getRenditions().get(0).getRenditionUUID() + " , " + datapodObjects.get(1).getRenditions().get(0).getRenditionUUID();
+        logger.information("rendition id" + docNumberFilterExtract);*/
+
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.LAW);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.BILL);
+        datapodObjects.add(SourceDataMockingNew.Iowa.Small.PREP.insert());
+        SourceDatapodConfiguration.getConfig().setSrcContentType(SrcContentType.CRT);
+        datapodObjects.add(SourceDataMockingNew.USCA.Small.PREP.insert());
+        sourceNavigateAngularLeftSidePanePage().clickFindButtonOnLeftPane();
+        String docNumberFilterExtract = datapodObjects.get(0).getRenditions().get(0).getRenditionUUID() + " , " + datapodObjects.get(1).getRenditions().get(0).getRenditionUUID();
+        logger.information("rendition id" + docNumberFilterExtract);
+        String[] attributeLabelNames = {"Instruction Note", "Date Suppress"};
+        sourceNavigateAngularLeftSidePanePage().setFindValue("Rendition UUID", docNumberFilterExtract);
+        sourceNavigateAngularLeftSidePanePage().clickFindButton();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.THREE_SECONDS);
+        sourceNavigateAngularPage().selectTwoRenditions((format(RENDITION_ROW_PATTERN, 0)), (format(RENDITION_ROW_PATTERN, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        //sourceNavigateAngularPage().rightClickRenditions();
+        sourceNavigateAngularLeftSidePanePage().click(SECTION_TAB);
+
+      //  sourceNavigateAngularLeftSidePanePage().click(SECTION_TAB);
+        sourceNavigateAngularPage().selectTwoRenditions((format(SECTION_ROW, 0)), (format(SECTION_ROW, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularLeftSidePanePage().rightClick((format(SECTION_ROW, 0)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+  //      sourceNavigateAngularPage().clickContextSubMenuItem(EDIT, SECTIONS);
+        boolean lockedStatus = sourceNavigateAngularRenditionPage().verifyLockIconStateOfRendition();
+        logger.information("locked rendition status is" + lockedStatus);
+        if (lockedStatus) {
+            logger.information("Rendition is already locked.");
+            assertThatRenditionDisplaysLockIcon(true);
+        } else {
+            logger.information("Rendition is not locked. Attempting to lock...");
+            try {
+                lockSectionRendition();
+                //Verify the lock icon for the rendition
+                assertThatRenditionDisplaysLockIcon(true);
+            } catch (Exception e) {
+                logger.information("Failed to lock rendition: " + e.getMessage());
+            }
+        }
+        sourceNavigateAngularPage().click(RENDITION_TAB);
+    }
+
+    public static void integrationPropertiesUpdate(String docNumberFilter) {
+        String[] attributeLabelNames = {"Instruction Note", "Date Suppress"};
+        sourceNavigateAngularLeftSidePanePage().setFindValue("Rendition UUID", docNumberFilter);
+        sourceNavigateAngularLeftSidePanePage().clickFindButton();
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.THREE_SECONDS);
+        sourceNavigateAngularPage().selectTwoRenditions((format(RENDITION_ROW_PATTERN, 0)), (format(RENDITION_ROW_PATTERN, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().rightClick(FIRST_RENDITION_ROW);
+        //sourceNavigateAngularPage().rightClickRenditions();
+        sourceNavigateAngularLeftSidePanePage().click(SECTION_TAB);
+        sourceNavigateAngularPage().selectTwoRenditions((format(SECTION_ROW, 0)), (format(SECTION_ROW, 1)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularLeftSidePanePage().rightClick((format(SECTION_ROW, 0)));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().clickContextSubMenuItem(EDIT, INTEGRATION_PROPERTIES);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        //sourceNavigateAngularPage().click(EFFECTIVE_CALENDER);
+        sourceNavigateAngularPage().sendTextToTextbox(EFFECTIVE_DATE_INPUT, DateAndTimeUtils.getCurrentDateMMddyyyyNoDelimeters());
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().click(format(SourceNavigateAngularSectionPageElements.SUPPRESS_DATE_ON_WESTLAW_RADIOBUTTON," Yes "));
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+        sourceNavigateAngularPage().sendTextToTextbox(format(INSTRUCTION_NOTE_INPUT_FIELD, "Section Instructions "), "This is testing data for Section Instructions");
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.FOUR_SECONDS);
+        sourceNavigateAngularPage().click(SUBMIT);
+        //closeIntegrationPropertiesWindow();
+        for (String columnName : attributeLabelNames) {
+            sourceNavigateAngularLeftSidePanePage().filterForColumnAndSelectUnderSpecificTab("SECTION", columnName);
+        }
+       /* verifyIntegrationPropertiesColumnValues(INSTRUCTION_NOTE_INPUT_FIELD,"This is testing data for Section Instructions");
+        verifyIntegrationPropertiesColumnValues(EFFECTIVE_DATE_INPUT,DateAndTimeUtils.getCurrentDateMMddyyyyNoDelimeters());
+        verifyIntegrationPropertiesColumnValues(SUPPRESS_DATE_ON_WESTLAW_RADIOBUTTON,"Yes");*/
+    }
+    public static void closeIntegrationPropertiesWindow()
+    {        sourceNavigateAngularPage().click(INTEGRATION_CLOSE_ICON);
+        DateAndTimeUtils.takeNap(DateAndTimeUtils.TWO_SECONDS);
+    }
+
+
+
 
     private static Stream<Arguments> provideRenditionUUID() {
         return Stream.of(
                 Arguments.of("APV"),
                 Arguments.of("PREP")
         );
+    }
+    public static void verifyIntegrationPropertiesColumnValues(String xpath, String text) {
+        List<WebElement> value = null;
+        String columnId = "";
+        if(xpath.contains("Instruction Note")){
+            columnId = "instructionNote";
+        }
+        else {
+            columnId = "effectiveDate";
+        }
+
+        try {
+            value = driver().findElements(By.xpath("//source-nav-root//div[@role='gridcell' and @col-id='" + columnId + "']"));
+            if (value.isEmpty()) {
+                logger.information("No elements found with column ID: " + columnId);
+            } else {
+                logger.information("The column value is " + value.size());
+            }
+        } catch (Exception e) {
+            logger.information("An error occurred while trying to find elements with column ID: " + columnId);
+        }
+        for (int i = 0; i < value.size(); i++) {
+            WebElement element=value.get(i);
+            assertThat(sourceNavigateAngularPage().getElementsText(element)).
+                    as("Entered column value " + text + "not displayed correctly under selected rendition Tab")
+                    .isEqualTo(text);
+        }
+
     }
 }

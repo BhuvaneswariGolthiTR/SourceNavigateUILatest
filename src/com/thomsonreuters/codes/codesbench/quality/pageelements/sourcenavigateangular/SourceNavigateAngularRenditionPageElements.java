@@ -24,4 +24,23 @@ public class SourceNavigateAngularRenditionPageElements
     @FindBy(how = How.XPATH, using = "//button[@id='save-note-btn']")
     public static WebElement submit;
 
+    public static final String INTEGRATION_EFFECTIVE_DATE = "//label[text()=' Effective Date ']";
+    public static final String EFFECTIVE_DATE_PICKER = "//input[@id='effectiveDatePicker']";
+    public static final String CALENDER = "//button[@aria-label='Open calendar']";
+    public static final String GENERAL_EFFECTIVE_DATE = "//label[@class='my-2 ng-star-inserted']/bento-toggle";
+    public static final String SUPPRESS_DATE_ON_WESLAW = "//div[text()='Suppress Date on Westlaw:']";
+    public static final String RADIO_BUTTON = "//label[text()='%s']";
+    public static final String INSTRUCTIONS_NOTE = "//label[text()='Instruction Note']";
+    public static final String ADD_BUTTON= "//button[text()='Add ']";
+    public static final String SUBMIT_BUTTON= "//div[@class='modal-footer py-1']/button[text()=' Submit ']";
+    public static final String INTEGRATION_CANCEL_BUTTON="//div[@class='modal-footer py-1']/button[text()='Cancel']";
+    public static final String INTEGRATION_CLOSE_ICON="//button[@class='close-btn']";
+    public static final String ERROR_MESSAGE= "//div[@class='invalid-tooltip ng-star-inserted']";
+    public static final String TEMPLATE_NOTES= "//div[@class='btn btn-icon ng-star-inserted']";
+    public static final String INSTRUCTIONS_NOTES_DROPDOWN_VALUE="//div[@class='ng-star-inserted']/div[text()='%s']";
+    public static final String GENERAL_EFFECTIVE_TOGGLE="//bento-toggle[@class='mr-2 bento-toggle bui-menu-item ng-untouched ng-pristine ng-valid']";
+
+
+
+
 }

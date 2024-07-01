@@ -26,7 +26,7 @@ public class TestDriver
 
     private static final String IE_EDGE_DRIVER_NAME = "IEDriverServer_4.8.1.exe";
     private static final String IE_EDGE_DRIVER_PATH = String.format("commonFiles\\drivers\\%s\\%s", DRIVER_BIT_VERSION, IE_EDGE_DRIVER_NAME);
-    private static final String EDGE_DRIVER_NAME = "msedgedriver_119.0.2151.44.exe";
+    private static final String EDGE_DRIVER_NAME = "msedgedriver_126.0.2592.61.exe";
     private static final String EDGE_DRIVER_PATH = String.format("commonFiles\\drivers\\edge\\%s\\%s", DRIVER_BIT_VERSION, EDGE_DRIVER_NAME);
 
     private static final String CHROME_DRIVER_NAME = "chromedriver_113.0.5672.63.exe";
@@ -54,9 +54,9 @@ public class TestDriver
         }
         else if(driver == null && TestSetupEdge.getBrowserTag().equals(CustomAnnotations.BrowserAnnotations.EDGE))
         {
-            //setEdgeDriverPath();
+            setEdgeDriverPath();
 
-            WebDriverManager.edgedriver().setup();
+           // WebDriverManager.edgedriver().setup();
             setEdgeDriverOptions();
             driver = new EdgeDriver(edgeOptions);
             return driver;

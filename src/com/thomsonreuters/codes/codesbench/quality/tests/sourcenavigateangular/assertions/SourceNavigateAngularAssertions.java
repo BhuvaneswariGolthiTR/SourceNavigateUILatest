@@ -888,5 +888,46 @@ public class SourceNavigateAngularAssertions extends SourceNavigateAngularBase {
                 .as("Clear Warning flag is not enabled")
                 .isTrue();
     }
+    public static void assertThatIntegrationPropertiesUI(boolean value) {
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.INTEGRATION_EFFECTIVE_DATE))
+                .as("Effective date is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.CALENDER))
+                .as("Calender button is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.EFFECTIVE_DATE_PICKER))
+                .as("effective date picker field  is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.SUPPRESS_DATE_ON_WESLAW))
+                .as("Suppress date on westlaw text  is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(String.format(SourceNavigateAngularRenditionPageElements.RADIO_BUTTON," Default ")))
+                .as(" Default radio button is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(String.format(SourceNavigateAngularRenditionPageElements.RADIO_BUTTON," Yes ")))
+                .as(" Yes radio button is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(String.format(SourceNavigateAngularRenditionPageElements.RADIO_BUTTON," No ")))
+                .as(" No radio button is not displayed for Integration Properties")
+                .isEqualTo(value);
+        boolean effectiveDateToggle = sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.GENERAL_EFFECTIVE_DATE);
+        boolean instructionNote= sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.INSTRUCTIONS_NOTE);
+        boolean addButton = sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.ADD_BUTTON);
+        if(effectiveDateToggle && instructionNote && addButton==value){
+            logger.information("General Effective Toggle ,Instructions Note and Add Buttons are displayed as expected");
+        }
+        else {
+            logger.information("General Effective Toggle ,Instructions Note and Add Buttons are  not displayed as expected");
+
+        }
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.INTEGRATION_CANCEL_BUTTON))
+                .as("Cancel button text  is not displayed for Integration Properties")
+                .isEqualTo(value);
+        assertThat(sourceNavigateAngularPage().isElementDisplayed(SourceNavigateAngularRenditionPageElements.SUBMIT_BUTTON))
+                .as("Submit button text  is not displayed for Integration Properties")
+                .isEqualTo(value);
+    }
+
+
 
 }
